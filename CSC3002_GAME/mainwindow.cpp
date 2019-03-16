@@ -95,6 +95,9 @@ void MainWindow::CreateActions() {           // Create all actions in mainwindow
     cheatLike = new QAction(tr("Like+100"), this);
     cheatMode = new QAction(tr("GodMode"), this);
 
+    callGrilfriend = new QAction(QString("CallGrilfriend"),this);
+    takeout = new QAction(QString("TakeOut"),this);
+    help = new QAction(QString("Help"),this);
     // newGame->setShortcut(tr("N"));
     // saveGame->setShortcut(tr("S"));
     // loadGame->setShortcut(tr("L"));
@@ -113,6 +116,8 @@ void MainWindow::CreateActions() {           // Create all actions in mainwindow
     connect(cheatGrade, SIGNAL(triggered()), cheats, SLOT(slotCheatGrade()));
     connect(cheatLike, SIGNAL(triggered()), cheats, SLOT(slotCheatGrade()));
     connect(cheatMode, SIGNAL(triggered()), cheats, SLOT(slotCheatMode()));
+    
+    connect(help,SIGNAL(triggered()),this,SLOT(slotHelp()));
 }
 
 
@@ -125,6 +130,12 @@ void MainWindow::CreateMenus() {             // Create all menus in mainwindow
     fileMenu->addSeparator();
     fileMenu->addAction(exitGame);
 
+    // phone menu
+    QMenu *Phone = menuBar()->addMenu(QString("Phone"));
+    Phone->addAction(callGrilfriend);
+    Phone->addAction(takeout);
+    Phone->addAction(help);
+    
     // cheat menuifferent ending according to sex
     QMenu *cheatMenu = menuBar()->addMenu(tr(" Cheat! "));
     cheatMenu->addAction(cheatEnergy);
@@ -221,6 +232,12 @@ void MainWindow::slotNewGame() {        // Start a new game
     // Select sex
     view->SetStatus("select");
     slotEvent("select");
+}
+
+void MainWindow::slotHelp(){
+    Clear();
+    view->SetStatus("help");
+    slotEvent("help");
 }
 
 void MainWindow::slotSaveGame() {           // Save data
