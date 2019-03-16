@@ -68,9 +68,9 @@ private:
     QAction *cheatLike;
     QAction *cheatGodMode;
     Cheat *cheats;
-    QAction *ToGo; //外卖
-    QAction *Chat;
-    QAction *Game;
+    QAction *callGrilfriend;
+    QAction *takeout;
+    QAction *help;
 
 };
 
