@@ -63,7 +63,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     // Set central widget and modify titile
     setCentralWidget(view);
     resize(550,450);
-    setWindowTitle(tr("Magic Tower"));
+    setWindowTitle(tr("SCHOOL LIFE"));
 
     // Welcome page
     Welcome();
@@ -142,19 +142,19 @@ void MainWindow::CreateMenus() {             // Create all menus in mainwindow
 void MainWindow::CreateInform() {           // Print player information
     AddPictureItem(-102, 0, "sidebg");
     AddPictureItem(-97, 30, "side");
-    AddPictureItem(-85, 5, "info1");
+    AddPictureItem(-93, 5, "info1");
     AddPictureItem(-65, 60, "sex"+QString::number(player.GetSex(), kDecimal));
     AddPictureItem(-82, 130, "info2");
     AddPictureItem(-83, 145, "info3");
     AddPictureItem(-83, 230, "info4");
-    AddTextItem(-50, 5, QString::number(player.GetPlace()+1, kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
-    AddTextItem(-65, 100, "Grade "+QString::number(player.GetGrade() +1, kDecimal), 10, QColor(qrand()%256,qrand()%256,qrand()%256));
-    AddTextItem(-43, 126, QString::number(player.GetEnerge(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
-    AddTextItem(-43, 142, QString::number(player.GetIQ(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
-    AddTextItem(-43, 158, QString::number(player.GetEQ(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
-    AddTextItem(-43, 174, QString::number(player.GetCharm(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
-    AddTextItem(-43, 190, QString::number(player.GetMoney(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
-    AddTextItem(-43, 206, QString::number(player.GetLike(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
+    AddTextItem(-60, 5, QString::number(player.GetPlace()+1, kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
+    AddTextItem(-62, 100, "Grade "+QString::number(player.GetGrade() +1, kDecimal), 10, QColor(qrand()%256,qrand()%256,qrand()%256));
+    AddTextItem(-43, 127, QString::number(player.GetEnerge(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
+    AddTextItem(-43, 154, QString::number(player.GetIQ(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
+    AddTextItem(-43, 178, QString::number(player.GetEQ(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
+    AddTextItem(-40, 228, QString::number(player.GetCharm(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
+    AddTextItem(-40, 254, QString::number(player.GetMoney(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
+    AddTextItem(-40, 281, QString::number(player.GetLike(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
 
     //AddTextItem(-40, 240, QString::number(keys.GetYellow(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
     //AddTextItem(-40, 265, QString::number(keys.GetBlue(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
