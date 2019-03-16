@@ -63,7 +63,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     // Set central widget and modify titile
     setCentralWidget(view);
     resize(550,450);
-    setWindowTitle(tr("Magic Tower"));
+    setWindowTitle(tr("SCHOOL LIFE"));
 
     // Welcome page
     Welcome();
