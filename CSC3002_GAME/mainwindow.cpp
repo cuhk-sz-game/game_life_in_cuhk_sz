@@ -93,8 +93,11 @@ void MainWindow::CreateActions() {           // Create all actions in mainwindow
     cheatMoney = new QAction(tr("Money+50"), this);
     cheatGrade = new QAction(tr("Grade+1"), this);
     cheatLike = new QAction(tr("Like+100"), this);
-    cheatGodMode = new QAction(tr("GodMode"), this);
+    cheatMode = new QAction(tr("GodMode"), this);
 
+    callGrilfriend = new QAction(QString("CallGrilfriend"),this);
+    takeout = new QAction(QString("TakeOut"),this);
+    help = new QAction(QString("Help"),this);
     // newGame->setShortcut(tr("N"));
     // saveGame->setShortcut(tr("S"));
     // loadGame->setShortcut(tr("L"));
@@ -112,7 +115,9 @@ void MainWindow::CreateActions() {           // Create all actions in mainwindow
     connect(cheatMoney, SIGNAL(triggered()), cheats, SLOT(slotCheatMoney()));
     connect(cheatGrade, SIGNAL(triggered()), cheats, SLOT(slotCheatGrade()));
     connect(cheatLike, SIGNAL(triggered()), cheats, SLOT(slotCheatGrade()));
-    connect(cheatGodMode, SIGNAL(triggered()), cheats, SLOT(slotCheatMode()));
+    connect(cheatMode, SIGNAL(triggered()), cheats, SLOT(slotCheatMode()));
+    
+    connect(help,SIGNAL(triggered()),this,SLOT(slotHelp()));
 }
 
 
@@ -125,6 +130,12 @@ void MainWindow::CreateMenus() {             // Create all menus in mainwindow
     fileMenu->addSeparator();
     fileMenu->addAction(exitGame);
 
+    // phone menu
+    QMenu *Phone = menuBar()->addMenu(QString("Phone"));
+    Phone->addAction(callGrilfriend);
+    Phone->addAction(takeout);
+    Phone->addAction(help);
+    
     // cheat menuifferent ending according to sex
     QMenu *cheatMenu = menuBar()->addMenu(tr(" Cheat! "));
     cheatMenu->addAction(cheatEnergy);
@@ -136,7 +147,7 @@ void MainWindow::CreateMenus() {             // Create all menus in mainwindow
     //cheatMenu->addSeparator();
     //cheatMenu->addSeparator();
     //cheatMenu->addSeparator();
-    cheatMenu->addAction(cheatGodMode);
+    cheatMenu->addAction(cheatMode);
 }
 
 void MainWindow::CreateInform() {           // Print player information
@@ -155,7 +166,6 @@ void MainWindow::CreateInform() {           // Print player information
     AddTextItem(-40, 228, QString::number(player.GetCharm(), kDecimal), 12, QColor(0,0,0));
     AddTextItem(-40, 254, QString::number(player.GetMoney(), kDecimal), 12, QColor(0,0,0));
     AddTextItem(-40, 281, QString::number(player.GetLike(), kDecimal), 12, QColor(0,0,0));
-
     //AddTextItem(-40, 240, QString::number(keys.GetYellow(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
     //AddTextItem(-40, 265, QString::number(keys.GetBlue(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
     //AddTextItem(-40, 290, QString::number(keys.GetRed(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
@@ -222,6 +232,14 @@ void MainWindow::slotNewGame() {        // Start a new game
     view->SetStatus("select");
     slotEvent("select");
 }
+
+
+void MainWindow::slotHelp(){
+    Clear();
+    view->SetStatus("help");
+    slotEvent("help");
+}
+
 
 void MainWindow::slotSaveGame() {           // Save data
     db.SaveMap(1);
