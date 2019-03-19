@@ -51,4 +51,4 @@ Main Body
 Dependence Graph
 ===
 
-  
+![](https://github.com/cuhk-sz-game/game_life_in_cuhk_sz/tree/master/pic/dependence.png)
