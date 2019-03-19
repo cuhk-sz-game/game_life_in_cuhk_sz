@@ -27,5 +27,24 @@ The final goal is to pass all exams and graduate successfully with high GPA.
 On each day, the player is free to choose any activity he/she will like to do, but energy, time and money are limited. 
 It is up to the player to make decisions. Moreover, there exist some activities that can only be triggered after 
 the main character’s attributes meet predefined requirements. 
+
+
+Main Body
+===
+  As is mentioned in the previous description, this project is a simple simulation of students’ life in CUHK(SZ). Every choice of the player affects role’s IQ, EQ, glamor, energy and money. Some random events might happen when some attributes reach a predesigned level. For example, when the character has low IQ, he/she might be expelled from school. 
   
+  Some basic elements in the game are as follows:
+    • 2 main characters: a boy and girl character (the player can choose either one)
+    • 5 attributes: IQ, EQ, glamor, money, energy 
+    • 4 kinds of NPC: teaching professors, science professors, club professors (by meeting them the main character may trigger          
+      activities and then increase or decrease his/her attributes), a boyfriend/girlfriend (randomly appearing in every map; the 
+      main character needs to develop favorability with him/her to build the relationship)
+    • 3 maps: base map (dormitory; connecting with every other venue), classroom (attending class or interacting with professor), 
+      library (self-study or meeting professor)
+      
+  Noticeably, how each interaction affects the data exactly will be adjusted and determined in future game development stage.
+  
+Dependence Graph
+===
+
   
