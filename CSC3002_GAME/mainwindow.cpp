@@ -11,7 +11,7 @@
 #include <QtMath>
 #include <QApplication>
 #include <QDebug>
-//test2
+//test
 
 // Constants
 const int kPixlen = 32;             // The pixels of each block
