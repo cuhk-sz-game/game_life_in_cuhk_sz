@@ -52,3 +52,19 @@ Dependence Graph
 ===
 
 ![](https://github.com/cuhk-sz-game/game_life_in_cuhk_sz/blob/master/pic/denpendence.png)
+
+
+    a) mainwindow:
+    i. creating game window and basic control menu
+    ii. visualization of game contents, including map, items, player...
+    b) view:
+    i. achieving game operations and control functions such as movement
+    ii. defining all events by case
+    c) database:
+    i. loading the contents of sql file into c++ environment such as the position
+       of every item (including map itself)
+    ii. saving and reloading the game
+    d) player/role/tool/shop_items:
+    i. parameters used in the game
+    e) cheat/phone:
+    i. class which can manipulate the parameter when testing game and special functions
