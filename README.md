@@ -68,3 +68,6 @@ Dependence Graph
     i. parameters used in the game
     e) cheat/phone:
     i. class which can manipulate the parameter when testing game and special functions
+
+Screenshots from the demo
+===
