@@ -96,7 +96,7 @@ void MainWindow::CreateActions() {           // Create all actions in mainwindow
     cheatLike = new QAction(tr("Like+100"), this);
     cheatMode = new QAction(tr("GodMode"), this);
 
-    callGrilfriend = new QAction(QString("CallGrilfriend"),this);
+    callGirlfriendOrBoyfriend = new QAction(QString("CallGirlfriendOrBoyfriend"),this);
     takeout = new QAction(QString("TakeOut"),this);
     help = new QAction(QString("Help"),this);
     // newGame->setShortcut(tr("N"));
@@ -133,7 +133,7 @@ void MainWindow::CreateMenus() {             // Create all menus in mainwindow
 
     // phone menu
     QMenu *Phone = menuBar()->addMenu(QString("Phone"));
-    Phone->addAction(callGrilfriend);
+    Phone->addAction(callGirlfriendOrBoyfriend);
     Phone->addAction(takeout);
     Phone->addAction(help);
     
@@ -159,14 +159,14 @@ void MainWindow::CreateInform() {           // Print player information
     AddPictureItem(-82, 130, "info2");
     AddPictureItem(-83, 145, "info3");
     AddPictureItem(-83, 230, "info4");
-    AddTextItem(-60, 5, "STREET" /*+QString::number(player.GetPlace()+1, kDecimal)*/, 12, QColor(0,0,0));
-    AddTextItem(-62, 100, "DAY "+QString::number(player.GetGrade() +1, kDecimal), 10, QColor(0,0,0));
-    AddTextItem(-43, 127, QString::number(player.GetEnerge(), kDecimal), 12, QColor(0,0,0));
-    AddTextItem(-43, 154, QString::number(player.GetIQ(), kDecimal), 12, QColor(0,0,0));
-    AddTextItem(-43, 178, QString::number(player.GetEQ(), kDecimal), 12, QColor(0,0,0));
-    AddTextItem(-40, 228, QString::number(player.GetCharm(), kDecimal), 12, QColor(0,0,0));
-    AddTextItem(-40, 254, QString::number(player.GetMoney(), kDecimal), 12, QColor(0,0,0));
-    AddTextItem(-40, 281, QString::number(player.GetLike(), kDecimal), 12, QColor(0,0,0));
+    AddTextItem(-60, 5, "STREET" /*+QString::number(player.GetPlace()+1, kDecimal)*/, 8, QColor(0,0,0));
+    AddTextItem(-62, 100, "DAY "+QString::number(player.GetGrade() +1, kDecimal), 8, QColor(0,0,0));
+    AddTextItem(-43, 127, QString::number(player.GetEnerge(), kDecimal), 8, QColor(0,0,0));
+    AddTextItem(-43, 154, QString::number(player.GetIQ(), kDecimal), 8, QColor(0,0,0));
+    AddTextItem(-43, 178, QString::number(player.GetEQ(), kDecimal), 8, QColor(0,0,0));
+    AddTextItem(-40, 228, QString::number(player.GetCharm(), kDecimal), 8, QColor(0,0,0));
+    AddTextItem(-40, 254, QString::number(player.GetMoney(), kDecimal), 8, QColor(0,0,0));
+    AddTextItem(-40, 281, QString::number(player.GetLike(), kDecimal), 8, QColor(0,0,0));
     //AddTextItem(-40, 240, QString::number(keys.GetYellow(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
     //AddTextItem(-40, 265, QString::number(keys.GetBlue(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
     //AddTextItem(-40, 290, QString::number(keys.GetRed(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));

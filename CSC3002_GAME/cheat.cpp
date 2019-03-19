@@ -32,7 +32,7 @@ void Cheat::slotCheatCharm() {
 }
 
 void Cheat::slotCheatMoney() {          // Cheat: Money+50
-    player.SetMoney(player.GetMoney() + 100);
+    player.SetMoney(player.GetMoney() + 50);
     emit change();
 }
 

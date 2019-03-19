@@ -69,7 +69,7 @@ private:
     QAction *cheatLike;
     QAction *cheatGodMode;
     Cheat *cheats;
-    QAction *callGrilfriend;
+    QAction *callGirlfriendOrBoyfriend;
     QAction *takeout;
     QAction *help;
 
