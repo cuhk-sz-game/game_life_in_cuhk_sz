@@ -71,3 +71,11 @@ Dependence Graph
 
 Screenshots from the demo
 ===
+![](https://github.com/cuhk-sz-game/game_life_in_cuhk_sz/blob/master/pic/demo1.png)
+
+
+![](https://github.com/cuhk-sz-game/game_life_in_cuhk_sz/blob/master/pic/demo2.png)
+
+
+![](https://github.com/cuhk-sz-game/game_life_in_cuhk_sz/blob/master/pic/demo3.png)
+
