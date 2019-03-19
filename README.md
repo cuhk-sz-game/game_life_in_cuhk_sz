@@ -35,10 +35,13 @@ Main Body
   
   Some basic elements in the game are as follows:
   • 2 main characters: a boy and girl character (the player can choose either one)
+  
   • 5 attributes: IQ, EQ, glamor, money, energy 
+  
   • 4 kinds of NPC: teaching professors, science professors, club professors (by meeting them the main character may trigger         
     activities and then increase or decrease his/her attributes), a boyfriend/girlfriend (randomly appearing in every map; the
     main character needs to develop favorability with him/her to build the relationship)
+  
   • 3 maps: base map (dormitory; connecting with every other venue), classroom (attending class or interacting with professor),
     library (self-study or meeting professor)
       
