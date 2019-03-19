@@ -34,6 +34,7 @@ Main Body
   As is mentioned in the previous description, this project is a simple simulation of students’ life in CUHK(SZ). Every choice of the player affects role’s IQ, EQ, glamor, energy and money. Some random events might happen when some attributes reach a predesigned level. For example, when the character has low IQ, he/she might be expelled from school. 
   
   Some basic elements in the game are as follows:
+  
   • 2 main characters: a boy and girl character (the player can choose either one)
   
   • 5 attributes: IQ, EQ, glamor, money, energy 
