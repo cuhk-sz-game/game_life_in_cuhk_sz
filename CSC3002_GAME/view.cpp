@@ -26,7 +26,7 @@ void View::keyPressEvent(QKeyEvent * event) {         // This function will auto
     if (status == "main") {         // Read key and move player
         keyMain(event);
         action();         // Different actions according to Nextstep's num
-    } else if (status == "tip" || status == "book" || status == "help") {         // One click then back to main
+    } else if (status == "tip" || status == "book" || status == "help" ) {         // One click then back to main
         SetStatus("main");
         emit change();
     } else if (status == "ending" || status == "fail")         // One click then quit
@@ -39,7 +39,8 @@ void View::keyPressEvent(QKeyEvent * event) {         // This function will auto
         keyWelcome(event);
     else if (status == "select")         // Read key and choose sex
         keySelect(event);
-
+    else if (status == "prof1")
+        keyprof1(event);
 }
 
 void View::keyMain(QKeyEvent * event) {
@@ -187,6 +188,27 @@ void View::keyLike(QKeyEvent *event) {
     }
 }
 
+void View::keyprof1(QKeyEvent *event){
+    switch(event->key()){
+    case Qt::Key_1:
+        if(player.GetEnerge()>=15){
+            player.SetEnergy(player.GetEnerge()-15);
+            player.SetIQ(player.GetIQ()+2);
+            player.SetEQ(player.GetEQ()+2);
+            player.SetCharm(player.GetCharm()+2);
+            player.SetMoney(player.GetMoney()+20);
+        }
+        emit events("prof1");
+        break;
+    case Qt::Key_2:
+        SetStatus("main");
+        emit change();
+        break;
+    default:
+        break;
+    }
+
+}
 void View::action() {
     switch (next_step) {
         case 3:
@@ -196,13 +218,9 @@ void View::action() {
             player.SetEQ(player.GetEQ()+5);
         break;
 
-        case 4:
+        case 999:
             SetStatus("prof1");
-            player.SetEnergy(player.GetEnerge()-15);
-            player.SetIQ(player.GetIQ()+2);
-            player.SetEQ(player.GetEQ()+2);
-            player.SetCharm(player.GetCharm()+2);
-            player.SetMoney(player.GetMoney()+20);
+            emit events("prof1");
         break;
 
         case 5:
@@ -214,7 +232,6 @@ void View::action() {
         break;
 
         case 6:
-            SetStatus("prof1");
             player.SetEnergy(player.GetEnerge()-1);
             player.SetIQ(player.GetIQ()+2);
             player.SetEQ(player.GetEQ()+2);
@@ -281,33 +298,61 @@ void View::action() {
             emit fight(next_step);
             break;
         */
-        case 27:
-            // Sorceress's tip
-            SetStatus("tip");
-            emit events("tip2");
-            break;
-        case 28:
-            player.SetMoney(player.GetMoney()+100);
-            break;
+//        case 27:
+//            // Sorceress's tip
+//            SetStatus("tip");
+//            emit events("tip2");
+//            break;
+//        case 28:
+//            player.SetMoney(player.GetMoney()+100);
+//            break;
 
-        case 51:
-            // Shopping
-            SetStatus("shop");
-            emit events("shop");
-            break;
-        case 80:
+//        case 51:
+//            // Shopping
+//            SetStatus("shop");
+//            emit events("shop");
+//            break;
+        case 123:
             // Upstairs
             player.SetPlace(player.GetPlace()+1);
+            player.SetPosx(11);
+            player.SetPosy(7);
             break;
-        case 90:
+        case 125:
+            // Upstairs
+            player.SetPlace(player.GetPlace()+2);
+            player.SetPosx(11);
+            player.SetPosy(2);
+            break;
+        case 126:
             // downstairs
             player.SetPlace(player.GetPlace()-1);
+            player.SetPosx(9);
+            player.SetPosy(8);
             break;
-        case 99:
-            // End of the game
-            SetStatus("ending");
-            emit events("ending");
+        case 127:
+            // downstairs
+            player.SetPlace(player.GetPlace()-1);
+            player.SetPosx(9);
+            player.SetPosy(8);
             break;
+        case 668:
+            // Upstairs
+            player.SetPlace(player.GetPlace()-2);
+            player.SetPosx(8);
+            player.SetPosy(13);
+            break;
+        case 669:
+        // Upstairs
+            player.SetPlace(player.GetPlace()-2);
+            player.SetPosx(8);
+            player.SetPosy(13);
+            break;
+//        case 99:
+//            // End of the game
+//            SetStatus("ending");
+//            emit events("ending");
+//            break;
     }
     if (status == "main")
         emit change();
@@ -316,7 +361,7 @@ void View::action() {
 int View::access(int x, int y) {          // Check if map(x,y) is access or not
     int tmp = map[x][y][player.GetPlace()];
     next_step = tmp;
-    if (tmp == 0 || (tmp > 900 && tmp < 917) || (tmp > 10 && tmp < 27) || (tmp > 27 && tmp < 35) || tmp == 59 ) {
+    if (tmp == 0 || (tmp > 900 && tmp < 919) || tmp == 1/* || (tmp > 10 && tmp < 27) || (tmp > 27 && tmp < 35) || tmp == 59 */) {
         map[x][y][player.GetPlace()] = 0;
         return 1;
     } else

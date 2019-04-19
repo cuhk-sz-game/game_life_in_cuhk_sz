@@ -44,6 +44,7 @@ public slots:
     //void slotDate(int num);
     void slotEvent(QString str);
     void slotHelp();
+    void slotprof1();
 
 private:
     View *view;
