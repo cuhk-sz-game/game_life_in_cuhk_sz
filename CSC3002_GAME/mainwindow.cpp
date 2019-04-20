@@ -11,7 +11,7 @@
 #include <QtMath>
 #include <QApplication>
 #include <QDebug>
-//test
+//test2
 
 // Constants
 const int kPixlen = 32;             // The pixels of each block
@@ -152,7 +152,6 @@ void MainWindow::CreateMenus() {             // Create all menus in mainwindow
 }
 
 void MainWindow::CreateInform() {           // Print player information
-    const char *location[]={"STREET","LIBRARY","CLASSROOM","CANTEE","GYM"};
     AddPictureItem(-102, 0, "sidebg");
     AddPictureItem(-97, 30, "side");
     AddPictureItem(-93, 5, "info1");
@@ -160,7 +159,7 @@ void MainWindow::CreateInform() {           // Print player information
     AddPictureItem(-82, 130, "info2");
     AddPictureItem(-83, 145, "info3");
     AddPictureItem(-83, 230, "info4");
-    AddTextItem(-60, 5, location[player.GetPlace()]/*+QString::number(player.GetPlace()+1, kDecimal)*/, 12, QColor(0,0,0));
+    AddTextItem(-60, 5, "STREET" /*+QString::number(player.GetPlace()+1, kDecimal)*/, 12, QColor(0,0,0));
     AddTextItem(-62, 100, "DAY "+QString::number(player.GetGrade() +1, kDecimal), 10, QColor(0,0,0));
     AddTextItem(-43, 127, QString::number(player.GetEnerge(), kDecimal), 12, QColor(0,0,0));
     AddTextItem(-43, 154, QString::number(player.GetIQ(), kDecimal), 12, QColor(0,0,0));
@@ -193,41 +192,6 @@ void MainWindow::slotShop() {               // Draw the shop scene
     CreateInform();
 }
 
-void MainWindow::slotprof1(){
-    Clear();
-    AddPictureItem(0,0,"prof1");
-    CreateInform();
-}
-
-void MainWindow::slotstudy(){
-    Clear();
-    AddPictureItem(0,0,"prof1");
-    CreateInform();
-}
-
-void MainWindow::slotlecture(){
-    Clear();
-    AddPictureItem(0,0,"prof1");
-    CreateInform();
-}
-
-void MainWindow::slotprof2(){
-    Clear();
-    AddPictureItem(0,0,"prof1");
-    CreateInform();
-}
-
-void MainWindow::slotprof3(){
-    Clear();
-    AddPictureItem(0,0,"prof1");
-    CreateInform();
-}
-
-void MainWindow::sloteat(){
-    Clear();
-    AddPictureItem(0,0,"prof1");
-    CreateInform();
-}
 void MainWindow::slotEvent(QString str) {           // Choose different event according to str
     if (str == "new") slotNewGame();
     else if (str == "boy") player.ChooseSex(1);
@@ -239,12 +203,6 @@ void MainWindow::slotEvent(QString str) {           // Choose different event ac
     */
     else if (str == "shop") slotShop();
     else if (str == "quit") close();
-    else if (str == "prof1") slotprof1();
-    else if (str == "study") slotstudy();
-    else if (str == "lecture") slotlecture();
-    else if (str == "prof2") slotprof2();
-    else if (str == "prof3") slotprof3();
-    else if (str == "eat") sloteat();
     else {
         Clear();
         AddPictureItem(-102, 0, "background");
@@ -306,11 +264,7 @@ void MainWindow::slotMovePlayerItem(int x, int y) {             // Move player i
         playerItem->moveBy(x*kPixlen, y*kPixlen);
         player.SetPosx(player.GetPosx() + x);
         player.SetPosy(player.GetPosy() + y);
-        if (player.GetPlace() == 0){
-            map[player.GetPosx()][player.GetPosy()][player.GetPlace()] = 1;
-        }
-        else if (player.GetPlace() == 1) map[player.GetPosx()][player.GetPosy()][player.GetPlace()] = 0;
-        else if (player.GetPlace() == 2) map[player.GetPosx()][player.GetPosy()][player.GetPlace()] = 918;
+        map[player.GetPosx()][player.GetPosy()][player.GetPlace()] = 0;
     }
 }
 
