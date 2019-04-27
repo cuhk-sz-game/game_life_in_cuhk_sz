@@ -43,7 +43,6 @@ public slots:
     //void slotBook();
     //void slotDate(int num);
     void slotEvent(QString str);
-    void slotHelp();
 
 private:
     View *view;
