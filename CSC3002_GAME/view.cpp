@@ -41,6 +41,16 @@ void View::keyPressEvent(QKeyEvent * event) {         // This function will auto
         keySelect(event);
     else if (status == "prof1")
         keyprof1(event);
+    else if (status == "study")
+        keystudy(event);
+    else if (status == "lecture")
+        keylecture(event);
+    else if (status == "prof2")
+        keyprof2(event);
+    else if (status == "prof3")
+        keyprof2(event);
+    else if (status == "eat")
+        keyeat(event);
 }
 
 void View::keyMain(QKeyEvent * event) {
@@ -207,15 +217,165 @@ void View::keyprof1(QKeyEvent *event){
     default:
         break;
     }
-
 }
-void View::action() {
-    switch (next_step) {
-        case 3:
-            SetStatus("lecture");
+
+void View::keystudy(QKeyEvent *event){
+    switch(event->key()){
+    case Qt::Key_1:
+        if(player.GetEnerge()>=10){
+            player.SetEnergy(player.GetEnerge()-10);
+            player.SetIQ(player.GetIQ()+3);
+            player.SetEQ(player.GetEQ()+1);
+            player.SetCharm(player.GetCharm()+1);
+        }
+        emit events("study");
+        break;
+    case Qt::Key_2:
+        SetStatus("main");
+        emit change();
+        break;
+    default:
+        break;
+    }
+}
+
+void View::keylecture(QKeyEvent *event){
+    switch(event->key()){
+    case Qt::Key_1:
+        if(player.GetEnerge()>=10){
             player.SetEnergy(player.GetEnerge()-10);
             player.SetIQ(player.GetIQ()+5);
-            player.SetEQ(player.GetEQ()+5);
+            player.SetEQ(player.GetEQ()+1);
+        }
+        emit events("lecture");
+        break;
+    case Qt::Key_2:
+        SetStatus("main");
+        emit change();
+        break;
+    default:
+        break;
+    }
+}
+
+void View::keyprof2(QKeyEvent *event){
+    switch(event->key()){
+    case Qt::Key_1:
+        if(player.GetEnerge()>=15){
+            player.SetEnergy(player.GetEnerge()-15);
+            player.SetIQ(player.GetIQ()+10);
+            player.SetCharm(player.GetCharm()+2);
+            player.SetMoney(player.GetMoney()+10);
+        }
+        emit events("prof2");
+        break;
+    case Qt::Key_2:
+        SetStatus("main");
+        emit change();
+        break;
+    default:
+        break;
+    }
+}
+
+void View::keyprof3(QKeyEvent *event){
+    switch(event->key()){
+    case Qt::Key_1:
+        if(player.GetEnerge()>=10 && player.GetIQ()>=130 && player.GetEQ()>=120){
+            player.SetEnergy(player.GetEnerge()-10);
+            player.SetIQ(player.GetIQ()+2);
+            player.SetEQ(player.GetEQ()+2);
+            player.SetCharm(player.GetCharm()+10);
+        }
+        emit events("prof3");
+        break;
+    case Qt::Key_2:
+        SetStatus("main");
+        emit change();
+        break;
+    default:
+        break;
+    }
+}
+
+void View::keyeat(QKeyEvent *event){
+    switch(event->key()){
+    case Qt::Key_1:
+        if(player.GetMoney()>=20){
+            player.SetEnergy(player.GetEnerge()+15);
+            player.SetMoney(player.GetMoney()-20);
+            player.SetEat(player.GetEat()+1);
+        }
+        emit events("eat");
+        break;
+    case Qt::Key_2:
+        SetStatus("main");
+        emit change();
+        break;
+    default:
+        break;
+    }
+}
+
+
+void View::setlover(int map[10][14][14]){
+    int map_id;
+    map_id = (rand()%1) + 1;
+    int pos[196][2];
+    int count = 0;
+
+    for (int i = 0; i < 14;)
+    {
+        for (int j=0; j<14;)
+        {
+            if (map[map_id][i][j] >= 900)
+            {
+                pos[i][0]=i;
+                pos[i][1]=j;
+                count ++;
+            }
+            j++;
+        }
+        i++;
+    }
+
+    int rand_lover;
+    rand_lover = (rand()%(count));
+    int lover_sex = player.GetSex();
+    if (lover_sex == 1){ //boy
+        map[map_id][pos[rand_lover][0]][pos[rand_lover][1]] = 103; //girl pic
+    }else{
+        map[map_id][pos[rand_lover][0]][pos[rand_lover][1]] = 113; //boy pic
+    }
+}
+
+void View::meetlover(QKeyEvent *event){
+    switch(event->key()){
+    case Qt::Key_1:
+        if(player.GetEnerge()>=10 && player.GetIQ()>=130 && player.GetEQ()>=120){
+            player.SetEnergy(player.GetEnerge()-10);
+            player.SetIQ(player.GetIQ()+2);
+            player.SetEQ(player.GetEQ()+2);
+            player.SetCharm(player.GetCharm()+10);
+            //fight();
+        }
+        emit events("prof3");
+        break;
+    case Qt::Key_2:
+        SetStatus("main");
+        emit change();
+        break;
+    default:
+        break;
+    }
+}
+
+
+void View::action() {
+    switch (next_step) {
+        case 640:
+            SetStatus("lecture");
+            emit events("lecture");
         break;
 
         case 999:
@@ -223,34 +383,24 @@ void View::action() {
             emit events("prof1");
         break;
 
-        case 5:
+        case 998:
             SetStatus("prof2");
-            player.SetEnergy(player.GetEnerge()-15);
-            player.SetIQ(player.GetIQ()+10);
-            player.SetCharm(player.GetCharm()+2);
-            player.SetMoney(player.GetMoney()+10);
+            emit events("prof2");
         break;
 
         case 6:
-            player.SetEnergy(player.GetEnerge()-1);
-            player.SetIQ(player.GetIQ()+2);
-            player.SetEQ(player.GetEQ()+2);
-            player.SetCharm(player.GetCharm()+10);
+            SetStatus("prof3");
+            emit events("prof3");
         break;
 
-        case 7:
+        case 122:
             SetStatus("eat");
-            player.SetEnergy(player.GetEnerge()+15);
-            player.SetMoney(player.GetMoney()-20);
-            player.SetEat(player.GetEat()+1);
+            emit events("eat");
         break;
 
-        case 8:
+        case 626:
             SetStatus("study");
-            player.SetEnergy(player.GetEnerge()-10);
-            player.SetIQ(player.GetIQ()+3);
-            player.SetEQ(player.GetEQ()+1);
-            player.SetCharm(player.GetCharm()+1);
+            emit events("study");
         break;
 
         case 9:
