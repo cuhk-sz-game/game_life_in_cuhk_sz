@@ -318,7 +318,7 @@ void View::keyeat(QKeyEvent *event){
 }
 
 
-void View::setlover(int map[10][14][14]){
+void View::setlover(){
     int map_id;
     map_id = (rand()%1) + 1;
     int pos[196][2];
@@ -328,7 +328,7 @@ void View::setlover(int map[10][14][14]){
     {
         for (int j=0; j<14;)
         {
-            if (map[map_id][i][j] >= 900)
+            if (map[i][j][map_id] >= 900)
             {
                 pos[i][0]=i;
                 pos[i][1]=j;
@@ -343,9 +343,9 @@ void View::setlover(int map[10][14][14]){
     rand_lover = (rand()%(count));
     int lover_sex = player.GetSex();
     if (lover_sex == 1){ //boy
-        map[map_id][pos[rand_lover][0]][pos[rand_lover][1]] = 103; //girl pic
+        map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 103; //girl pic
     }else{
-        map[map_id][pos[rand_lover][0]][pos[rand_lover][1]] = 113; //boy pic
+        map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 113; //boy pic
     }
 }
 
@@ -407,6 +407,7 @@ void View::action() {
             SetStatus("sleep");
             player.SetDay(player.GetDay()+1);
             player.SetMoney(player.GetMoney()+100);
+            setlover();
 
             if(player.GetEat()==0)
             {
