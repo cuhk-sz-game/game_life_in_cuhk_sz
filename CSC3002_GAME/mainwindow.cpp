@@ -152,7 +152,7 @@ void MainWindow::CreateMenus() {             // Create all menus in mainwindow
 }
 
 void MainWindow::CreateInform() {           // Print player information
-    const char *location[]={"STREET","LIBRARY","CLASSROOM","CANTEE","GYM"};
+    const char *location[]={"STREET","LIBRARY","CLASS","CANTEE","GYM"};
     AddPictureItem(-102, 0, "sidebg");
     AddPictureItem(-97, 30, "side");
     AddPictureItem(-93, 5, "info1");
@@ -161,7 +161,7 @@ void MainWindow::CreateInform() {           // Print player information
     AddPictureItem(-83, 145, "info3");
     AddPictureItem(-83, 230, "info4");
     AddTextItem(-60, 5, location[player.GetPlace()]/*+QString::number(player.GetPlace()+1, kDecimal)*/, 12, QColor(0,0,0));
-    AddTextItem(-62, 100, "DAY "+QString::number(player.GetGrade() +1, kDecimal), 10, QColor(0,0,0));
+    AddTextItem(-62, 100, "DAY "+QString::number(player.GetDay()+1, kDecimal), 10, QColor(0,0,0));
     AddTextItem(-43, 127, QString::number(player.GetEnerge(), kDecimal), 12, QColor(0,0,0));
     AddTextItem(-43, 154, QString::number(player.GetIQ(), kDecimal), 12, QColor(0,0,0));
     AddTextItem(-43, 178, QString::number(player.GetEQ(), kDecimal), 12, QColor(0,0,0));
@@ -199,6 +199,54 @@ void MainWindow::slotprof1(){
     CreateInform();
 }
 
+void MainWindow::slotprof2(){
+    Clear();
+    AddPictureItem(0,0,"prof2");
+    CreateInform();
+}
+
+void MainWindow::slotprof3(){
+    Clear();
+    AddPictureItem(0,0,"prof1");
+    CreateInform();
+}
+
+void MainWindow::sloteat(){
+    Clear();
+    AddPictureItem(0,0,"eat");
+    CreateInform();
+}
+
+void MainWindow::slotsleep(){
+    Clear();
+    AddPictureItem(0,0,"sleep");
+    CreateInform();
+}
+
+void MainWindow::slotstudy(){
+    Clear();
+    AddPictureItem(0,0,"study");
+    CreateInform();
+}
+
+void MainWindow::slotlackpf2(){
+    Clear();
+    AddPictureItem(0,0,"lackpf2");
+    CreateInform();
+}
+
+void MainWindow::slotlackpf3(){
+    Clear();
+    AddPictureItem(0,0,"lackpf3");
+    CreateInform();
+}
+
+void MainWindow::slotlecture(){
+    Clear();
+    AddPictureItem(0,0,"lecture");
+    CreateInform();
+}
+
 void MainWindow::slotEvent(QString str) {           // Choose different event according to str
     if (str == "new") slotNewGame();
     else if (str == "boy") player.ChooseSex(1);
@@ -211,6 +259,13 @@ void MainWindow::slotEvent(QString str) {           // Choose different event ac
     else if (str == "shop") slotShop();
     else if (str == "quit") close();
     else if (str == "prof1") slotprof1();
+    else if (str == "prof2") slotprof2();
+    else if (str == "prof3") slotprof3();
+    else if (str == "eat") sloteat();
+    else if (str == "sleep") slotsleep();
+    else if (str == "study") slotstudy();
+    else if (str == "lackpf2") slotlackpf2();
+    else if (str == "lecture") slotlecture();
     else {
         Clear();
         AddPictureItem(-102, 0, "background");

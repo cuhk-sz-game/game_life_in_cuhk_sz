@@ -51,6 +51,8 @@ void View::keyPressEvent(QKeyEvent * event) {         // This function will auto
         keyprof2(event);
     else if (status == "eat")
         keyeat(event);
+    else if (status == "sleep")
+        keysleep(event);
 }
 
 void View::keyMain(QKeyEvent * event) {
@@ -261,13 +263,15 @@ void View::keylecture(QKeyEvent *event){
 void View::keyprof2(QKeyEvent *event){
     switch(event->key()){
     case Qt::Key_1:
-        if(player.GetEnerge()>=15){
+        if(player.GetEnerge()>=15 && player.GetIQ()>=150){
             player.SetEnergy(player.GetEnerge()-15);
             player.SetIQ(player.GetIQ()+10);
             player.SetCharm(player.GetCharm()+2);
             player.SetMoney(player.GetMoney()+10);
+            emit events("prof2");
+        }else{
+            emit events("lackpf2");
         }
-        emit events("prof2");
         break;
     case Qt::Key_2:
         SetStatus("main");
@@ -286,8 +290,10 @@ void View::keyprof3(QKeyEvent *event){
             player.SetIQ(player.GetIQ()+2);
             player.SetEQ(player.GetEQ()+2);
             player.SetCharm(player.GetCharm()+10);
+            emit events("prof3");
+        }else{
+            emit events("lackpf3");
         }
-        emit events("prof3");
         break;
     case Qt::Key_2:
         SetStatus("main");
@@ -317,8 +323,37 @@ void View::keyeat(QKeyEvent *event){
     }
 }
 
+void View::keysleep(QKeyEvent *event){
+    switch(event->key()){
+    case Qt::Key_1:
+        player.SetDay(player.GetDay()+1);
+        //setlover();
+        player.SetMoney(player.GetMoney()+100);
 
-void View::setlover(int map[10][14][14]){
+        if(player.GetEat()==0)
+        {
+            if (player.GetSex()==0){player.SetEnergy(40);}
+            else{player.SetEnergy(35);}
+        }
+        else
+        {
+            player.SetEat(player.GetEat()-1);
+            if (player.GetSex()==0){player.SetEnergy(50);}
+            else{player.SetEnergy(45);}
+        }
+        SetStatus("main");
+        emit change();
+        break;
+    case Qt::Key_2:
+        SetStatus("main");
+        emit change();
+        break;
+    default:
+        break;
+    }
+}
+
+void View::setlover(){
     int map_id;
     map_id = (rand()%1) + 1;
     int pos[196][2];
@@ -328,7 +363,7 @@ void View::setlover(int map[10][14][14]){
     {
         for (int j=0; j<14;)
         {
-            if (map[map_id][i][j] >= 900)
+            if (map[i][j][map_id] >= 900)
             {
                 pos[i][0]=i;
                 pos[i][1]=j;
@@ -343,9 +378,9 @@ void View::setlover(int map[10][14][14]){
     rand_lover = (rand()%(count));
     int lover_sex = player.GetSex();
     if (lover_sex == 1){ //boy
-        map[map_id][pos[rand_lover][0]][pos[rand_lover][1]] = 103; //girl pic
+        map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 103; //girl pic
     }else{
-        map[map_id][pos[rand_lover][0]][pos[rand_lover][1]] = 113; //boy pic
+        map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 113; //boy pic
     }
 }
 
@@ -403,23 +438,9 @@ void View::action() {
             emit events("study");
         break;
 
-        case 9:
+        case 121:
             SetStatus("sleep");
-            player.SetDay(player.GetDay()+1);
-            player.SetMoney(player.GetMoney()+100);
-
-            if(player.GetEat()==0)
-            {
-                if (player.GetSex()==0){player.SetEnergy(40);}
-                else{player.SetEnergy(35);}
-            }
-            else
-            {
-                player.SetEat(player.GetEat()-1);
-                if (player.GetSex()==0){player.SetEnergy(50);}
-                else{player.SetEnergy(45);}
-            }
-
+            emit events("sleep");
         break;
 
         case 10:
