@@ -316,6 +316,61 @@ void View::keyeat(QKeyEvent *event){
         break;
     }
 }
+
+
+void View::setlover(int map[10][14][14]){
+    int map_id;
+    map_id = (rand()%1) + 1;
+    int pos[196][2];
+    int count = 0;
+
+    for (int i = 0; i < 14;)
+    {
+        for (int j=0; j<14;)
+        {
+            if (map[map_id][i][j] >= 900)
+            {
+                pos[i][0]=i;
+                pos[i][1]=j;
+                count ++;
+            }
+            j++;
+        }
+        i++;
+    }
+
+    int rand_lover;
+    rand_lover = (rand()%(count));
+    int lover_sex = player.GetSex();
+    if (lover_sex == 1){ //boy
+        map[map_id][pos[rand_lover][0]][pos[rand_lover][1]] = 103; //girl pic
+    }else{
+        map[map_id][pos[rand_lover][0]][pos[rand_lover][1]] = 113; //boy pic
+    }
+}
+
+void View::meetlover(QKeyEvent *event){
+    switch(event->key()){
+    case Qt::Key_1:
+        if(player.GetEnerge()>=10 && player.GetIQ()>=130 && player.GetEQ()>=120){
+            player.SetEnergy(player.GetEnerge()-10);
+            player.SetIQ(player.GetIQ()+2);
+            player.SetEQ(player.GetEQ()+2);
+            player.SetCharm(player.GetCharm()+10);
+            //fight();
+        }
+        emit events("prof3");
+        break;
+    case Qt::Key_2:
+        SetStatus("main");
+        emit change();
+        break;
+    default:
+        break;
+    }
+}
+
+
 void View::action() {
     switch (next_step) {
         case 640:
