@@ -32,6 +32,8 @@ public:
     void keystudy(QKeyEvent *event);
     void keysleep(QKeyEvent *event); //sleep() include stave and random event triggers
     void keymovie(QKeyEvent *event);
+    void setlover(int map[10][14][14]);
+    void meetlover(QKeyEvent *event);
 
     // random events
     void keyexam(QKeyEvent *event);

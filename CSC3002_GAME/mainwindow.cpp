@@ -199,35 +199,6 @@ void MainWindow::slotprof1(){
     CreateInform();
 }
 
-void MainWindow::slotstudy(){
-    Clear();
-    AddPictureItem(0,0,"prof1");
-    CreateInform();
-}
-
-void MainWindow::slotlecture(){
-    Clear();
-    AddPictureItem(0,0,"prof1");
-    CreateInform();
-}
-
-void MainWindow::slotprof2(){
-    Clear();
-    AddPictureItem(0,0,"prof1");
-    CreateInform();
-}
-
-void MainWindow::slotprof3(){
-    Clear();
-    AddPictureItem(0,0,"prof1");
-    CreateInform();
-}
-
-void MainWindow::sloteat(){
-    Clear();
-    AddPictureItem(0,0,"prof1");
-    CreateInform();
-}
 void MainWindow::slotEvent(QString str) {           // Choose different event according to str
     if (str == "new") slotNewGame();
     else if (str == "boy") player.ChooseSex(1);
@@ -240,11 +211,6 @@ void MainWindow::slotEvent(QString str) {           // Choose different event ac
     else if (str == "shop") slotShop();
     else if (str == "quit") close();
     else if (str == "prof1") slotprof1();
-    else if (str == "study") slotstudy();
-    else if (str == "lecture") slotlecture();
-    else if (str == "prof2") slotprof2();
-    else if (str == "prof3") slotprof3();
-    else if (str == "eat") sloteat();
     else {
         Clear();
         AddPictureItem(-102, 0, "background");
