@@ -440,7 +440,8 @@ void View::action() {
 
         case 121:
             SetStatus("sleep");
-
+            emit events("sleep");
+        break;
 
         case 10:
             SetStatus("movie");
