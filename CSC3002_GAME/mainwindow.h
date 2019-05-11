@@ -45,6 +45,15 @@ public slots:
     void slotEvent(QString str);
     void slotHelp();
     void slotprof1();
+    //void slotlackpf1();
+    void slotprof2();
+    void slotlackpf2();
+    void slotprof3();
+    void slotlackpf3();
+    void sloteat();
+    void slotsleep();
+    void slotstudy();
+    void slotlecture();
 
 private:
     View *view;
