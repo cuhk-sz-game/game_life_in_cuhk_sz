@@ -327,7 +327,7 @@ void View::keysleep(QKeyEvent *event){
     switch(event->key()){
     case Qt::Key_1:
         player.SetDay(player.GetDay()+1);
-        //setlover();
+        setlover();
         player.SetMoney(player.GetMoney()+100);
 
         if(player.GetEat()==0)
@@ -365,8 +365,8 @@ void View::setlover(){
         {
             if (map[i][j][map_id] >= 900)
             {
-                pos[i][0]=i;
-                pos[i][1]=j;
+                pos[count][0]=i;
+                pos[count][1]=j;
                 count ++;
             }
             j++;
