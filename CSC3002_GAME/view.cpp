@@ -463,7 +463,6 @@ void View::action() {
         case 22:
         /*
         case 23:
-
             SetStatus("");
             emit fight(next_step);
             break;
@@ -537,4 +536,3 @@ int View::access(int x, int y) {          // Check if map(x,y) is access or not
     } else
         return 0;
 }
-
