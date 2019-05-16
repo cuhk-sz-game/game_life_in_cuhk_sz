@@ -243,6 +243,8 @@
         <file alias="eat.png">assets/eat.png</file>
         <file alias="sleep.png">assets/sleep.png</file>
         <file alias="lecture.png">assets/lecture.png</file>
+        <file alias="gym.png">assets/gym.png</file>
+        <file alias="lackenergy.png">assets/lackenergy.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file alias="welcome.wav">assets/welcome.wav</file>

@@ -715,6 +715,7 @@ qrc_application.cpp: ../CSC3002_GAME/application.qrc \
 		../CSC3002_GAME/assets/666.png \
 		../CSC3002_GAME/assets/541.png \
 		../CSC3002_GAME/assets/550.png \
+		../CSC3002_GAME/assets/lackenergy.png \
 		../CSC3002_GAME/assets/619.png \
 		../CSC3002_GAME/assets/628.png \
 		../CSC3002_GAME/assets/ending1.png \
@@ -840,6 +841,7 @@ qrc_application.cpp: ../CSC3002_GAME/application.qrc \
 		../CSC3002_GAME/assets/126.png \
 		../CSC3002_GAME/assets/531.png \
 		../CSC3002_GAME/assets/656.png \
+		../CSC3002_GAME/assets/gym.png \
 		../CSC3002_GAME/assets/665.png \
 		../CSC3002_GAME/assets/540.png \
 		../CSC3002_GAME/assets/609.png \

@@ -54,7 +54,8 @@ public slots:
     void slotsleep();
     void slotstudy();
     void slotlecture();
-
+    void slotgym();
+    void slotlackenergy();
 private:
     View *view;
     QGraphicsScene *scene;

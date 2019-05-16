@@ -53,6 +53,8 @@ void View::keyPressEvent(QKeyEvent * event) {         // This function will auto
         keyeat(event);
     else if (status == "sleep")
         keysleep(event);
+    else if (status == "gym")
+        keygym(event);
 }
 
 void View::keyMain(QKeyEvent * event) {
@@ -282,6 +284,26 @@ void View::keyprof2(QKeyEvent *event){
     }
 }
 
+void View::keygym(QKeyEvent *event){
+    switch(event->key()){
+    case Qt::Key_1:
+        if(player.GetEnerge()>=10){
+            player.SetEnergy(player.GetEnerge()-10);
+            player.SetCharm(player.GetCharm()+4);
+            emit events("gym");
+        }else{
+            emit events("lackenergy");
+        }
+        break;
+    case Qt::Key_2:
+        SetStatus("main");
+        emit change();
+        break;
+    default:
+        break;
+    }
+}
+
 void View::keyprof3(QKeyEvent *event){
     switch(event->key()){
     case Qt::Key_1:
@@ -440,10 +462,14 @@ void View::action() {
 
         case 121:
             SetStatus("sleep");
-
-
+            emit events("sleep");
+        break;
         case 10:
             SetStatus("movie");
+        break;
+        case 124:
+            SetStatus("gym");
+            emit events("gym");
         break;
 
 

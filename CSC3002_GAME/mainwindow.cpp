@@ -247,6 +247,16 @@ void MainWindow::slotlecture(){
     CreateInform();
 }
 
+void MainWindow::slotgym(){
+    Clear();
+    AddPictureItem(0,0,"gym");
+    CreateInform();
+}
+void MainWindow::slotlackenergy(){
+    Clear();
+    AddPictureItem(0,0,"lackenergy");
+    CreateInform();
+}
 void MainWindow::slotEvent(QString str) {           // Choose different event according to str
     if (str == "new") slotNewGame();
     else if (str == "boy") player.ChooseSex(1);
@@ -266,6 +276,8 @@ void MainWindow::slotEvent(QString str) {           // Choose different event ac
     else if (str == "study") slotstudy();
     else if (str == "lackpf2") slotlackpf2();
     else if (str == "lecture") slotlecture();
+    else if (str == "gym") slotgym();
+    else if (str == "lackenergy") slotlackenergy();
     else {
         Clear();
         AddPictureItem(-102, 0, "background");
