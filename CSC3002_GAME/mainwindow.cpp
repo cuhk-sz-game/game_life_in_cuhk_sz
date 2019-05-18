@@ -295,6 +295,12 @@ void MainWindow::slotlowIQ(){
     CreateInform();
 }
 
+void MainWindow::slotnormal(){
+    Clear();
+    AddPictureItem(0,0,"normal");
+    CreateInform();
+}
+
 void MainWindow::slotEvent(QString str) {           // Choose different event according to str
     if (str == "new") slotNewGame();
     else if (str == "boy") player.ChooseSex(1);

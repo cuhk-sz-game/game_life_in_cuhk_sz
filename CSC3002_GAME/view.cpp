@@ -382,6 +382,8 @@ void View::keysleep(QKeyEvent *event){
                 emit events("highEQ");
             }else if(player.GetIQ()<300){
                 emit events("lowIQ");
+            }else if(player.GetIQ()>300){
+                emit events("normal");
             }
             SetStatus("ending");
         }

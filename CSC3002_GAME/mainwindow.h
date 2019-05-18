@@ -62,6 +62,7 @@ public slots:
     void slothighIQ();
     void slothighEQ();
     void slotlowIQ();
+    void slotnormal();
 private:
     View *view;
     QGraphicsScene *scene;
