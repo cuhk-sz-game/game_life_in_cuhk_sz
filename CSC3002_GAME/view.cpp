@@ -290,7 +290,8 @@ void View::keygym(QKeyEvent *event){
         if(player.GetEnerge()>=10){
             player.SetEnergy(player.GetEnerge()-10);
             player.SetCharm(player.GetCharm()+4);
-            emit events("gym");
+            SetStatus("main");
+            emit change();
         }else{
             emit events("lackenergy");
         }
@@ -298,6 +299,10 @@ void View::keygym(QKeyEvent *event){
     case Qt::Key_2:
         SetStatus("main");
         emit change();
+        break;
+    case Qt::Key_3:
+        SetStatus("gym");
+        emit events("gym");
         break;
     default:
         break;
@@ -333,12 +338,17 @@ void View::keyeat(QKeyEvent *event){
             player.SetEnergy(player.GetEnerge()+15);
             player.SetMoney(player.GetMoney()-20);
             player.SetEat(player.GetEat()+1);
+            SetStatus("main");
+            emit change();
         }
-        emit events("eat");
         break;
     case Qt::Key_2:
         SetStatus("main");
         emit change();
+        break;
+    case Qt::Key_3:
+        SetStatus("sleep");
+        emit events("sleep");
         break;
     default:
         break;
@@ -365,10 +375,24 @@ void View::keysleep(QKeyEvent *event){
         }
         SetStatus("main");
         emit change();
+        if(player.GetDay()==20){
+            if(player.GetIQ()>500){
+                emit events("highIQ");
+            }else if(player.GetEQ()>160){
+                emit events("highEQ");
+            }else if(player.GetIQ()<300){
+                emit events("lowIQ");
+            }
+            SetStatus("ending");
+        }
         break;
     case Qt::Key_2:
         SetStatus("main");
         emit change();
+        break;
+    case Qt::Key_3:
+        SetStatus("sleep");
+        emit events("sleep");
         break;
     default:
         break;
@@ -452,7 +476,7 @@ void View::action() {
 
         case 122:
             SetStatus("eat");
-            emit events("eat");
+            emit events("eat1");
         break;
 
         case 626:
@@ -462,14 +486,14 @@ void View::action() {
 
         case 121:
             SetStatus("sleep");
-            emit events("sleep");
+            emit events("dormitory");
         break;
         case 10:
             SetStatus("movie");
         break;
         case 124:
             SetStatus("gym");
-            emit events("gym");
+            emit events("gym1");
         break;
 
 

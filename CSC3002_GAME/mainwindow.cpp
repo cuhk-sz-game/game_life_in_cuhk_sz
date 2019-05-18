@@ -252,11 +252,49 @@ void MainWindow::slotgym(){
     AddPictureItem(0,0,"gym");
     CreateInform();
 }
+
+void MainWindow::sloteat1(){
+    Clear();
+    AddPictureItem(0,0,"eat1");
+    CreateInform();
+}
+
+void MainWindow::slotdormitory(){
+    Clear();
+    AddPictureItem(0,0,"Untitled-1");
+    CreateInform();
+}
+
+void MainWindow::slotgym1(){
+    Clear();
+    AddPictureItem(0,0,"work_out");
+    CreateInform();
+}
+
 void MainWindow::slotlackenergy(){
     Clear();
     AddPictureItem(0,0,"lackenergy");
     CreateInform();
 }
+
+void MainWindow::slothighIQ(){
+    Clear();
+    AddPictureItem(0,0,"highIQ");
+    CreateInform();
+}
+
+void MainWindow::slothighEQ(){
+    Clear();
+    AddPictureItem(0,0,"highEQ");
+    CreateInform();
+}
+
+void MainWindow::slotlowIQ(){
+    Clear();
+    AddPictureItem(0,0,"lowIQ");
+    CreateInform();
+}
+
 void MainWindow::slotEvent(QString str) {           // Choose different event according to str
     if (str == "new") slotNewGame();
     else if (str == "boy") player.ChooseSex(1);
@@ -278,6 +316,12 @@ void MainWindow::slotEvent(QString str) {           // Choose different event ac
     else if (str == "lecture") slotlecture();
     else if (str == "gym") slotgym();
     else if (str == "lackenergy") slotlackenergy();
+    else if (str == "eat1") sloteat1();
+    else if (str == "dormitory") slotdormitory();
+    else if (str == "gym1") slotgym1();
+    else if (str == "highIQ") slothighIQ();
+    else if (str == "highEQ") slothighEQ();
+    else if (str == "lowIQ") slotlowIQ();
     else {
         Clear();
         AddPictureItem(-102, 0, "background");

@@ -245,6 +245,15 @@
         <file alias="lecture.png">assets/lecture.png</file>
         <file alias="gym.png">assets/gym.png</file>
         <file alias="lackenergy.png">assets/lackenergy.png</file>
+        <file alias="GF.png">assets/GF.png</file>
+        <file alias="lowIQ.png">assets/lowIQ.png</file>
+        <file alias="noGF.png">assets/noGF.png</file>
+        <file alias="highEQ.png">assets/highEQ.png</file>
+        <file alias="highIQ.png">assets/highIQ.png</file>
+        <file alias="Untitled-1.png">assets/Untitled-1.png</file>
+        <file alias="eat1.png">assets/eat1.png</file>
+        <file alias="work_out.png">assets/work_out.png</file>
+        <file alias="normal.png">assets/normal.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file alias="welcome.wav">assets/welcome.wav</file>
