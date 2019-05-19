@@ -15,8 +15,14 @@ public:
     int GetToward() {return toward; }
     int GetSex() {return sex; }
     int GetNeed() {return need; }
+    int GetLover1(){return lover_pos1;}
+    int GetLover2(){return lover_pos2;}
+    int GetLover3(){return lover_pos3;}
 
     void SetGrade(int grade) { this->grade = grade; }
+    void SetLoverpose1(int lover_pos1) {this->lover_pos1=lover_pos1;}
+    void SetLoverpose2(int lover_pos2) {this->lover_pos2=lover_pos2;}
+    void SetLoverpose3(int lover_pos3) {this->lover_pos3=lover_pos3;}
     void SetPosx(int posx) { this->posx = posx; }
     void SetPosy(int posy) { this->posy = posy; }
     void SetPlace(int place) { this->place = place; }
@@ -27,6 +33,9 @@ public:
     void GradeUp();
 
 private:
+    int lover_pos1;
+    int lover_pos2;
+    int lover_pos3;
     int grade;
     int posx;
     int posy;

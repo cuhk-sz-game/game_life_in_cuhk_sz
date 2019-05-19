@@ -36,6 +36,7 @@ extern Role parameter;
 extern int map[14][14][10];
 extern int mode;
 
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     // Initialize private varible
     cheats = new Cheat();

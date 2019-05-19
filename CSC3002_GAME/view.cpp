@@ -12,6 +12,7 @@ extern Tools tools;
 extern ShopItem items;
 extern int map[14][14][10];
 
+
 View::View(QWidget *parent) : QGraphicsView(parent) {         // Initialize the status to "welcome"
     status = "welcome";
     next_step = 0;
@@ -359,7 +360,7 @@ void View::keysleep(QKeyEvent *event){
     switch(event->key()){
     case Qt::Key_1:
         player.SetDay(player.GetDay()+1);
-        //setlover();
+        setlover();
         player.SetMoney(player.GetMoney()+100);
 
         if(player.GetEat()==0)
@@ -400,7 +401,7 @@ void View::keysleep(QKeyEvent *event){
         break;
     }
 }
-
+/*
 void View::setlover(){
     int map_id;
     map_id = (rand()%1) + 1;
@@ -426,10 +427,72 @@ void View::setlover(){
     rand_lover = (rand()%(count));
     int lover_sex = player.GetSex();
     if (lover_sex == 1){ //boy
-        map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 103; //girl pic
+        if (map_id==1){
+            map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 128; //girl pic
+        }else{
+            map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 129; //girl pic
+        }
+
     }else{
-        map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 113; //boy pic
+        if (map_id==1){
+            map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 130; //boy pic
+        }else{
+            map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 131; //boy pic
+        }
     }
+}*/
+
+void View::setlover(){
+
+    if (player.GetDay()>1){
+        if (player.GetLover1()==1)
+        {
+            map[player.GetLover2()][player.GetLover3()][1]=917;
+        }else{
+            map[player.GetLover2()][player.GetLover3()][2]=918;
+        }
+    }
+    int map_id;
+    map_id = (rand()%2) + 1;
+    int pos[196][2];
+    int count = 0;
+
+    for (int i = 0; i < 14;)
+    {
+        for (int j=0; j<14;)
+        {
+            if (map[i][j][map_id] >= 900)
+            {
+                pos[count][0]=i;
+                pos[count][1]=j;
+                count ++;
+            }
+            j++;
+        }
+        i++;
+    }
+
+    int rand_lover;
+    rand_lover = (rand()%(count));
+    int lover_sex = player.GetSex();
+    if (lover_sex == 1){
+        if (map_id==1){
+            map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 128; //girl pic
+        }else{
+            map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 129; //girl pic
+        }
+
+    }else{
+        if (map_id==1){
+            map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 130; //boy pic
+        }else{
+            map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 131; //boy pic
+        }
+    }
+    player.SetLoverpose1(map_id);
+    player.SetLoverpose2(pos[rand_lover][0]);
+    player.SetLoverpose3(pos[rand_lover][1]);
+
 }
 
 void View::meetlover(QKeyEvent *event){
