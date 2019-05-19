@@ -2,6 +2,7 @@
 #include "player.h"
 #include "role.h"
 #include "shop_item.h"
+#include "character.h" //人物触发事件
 #include "tool.h"
 #include <QKeyEvent>
 
@@ -10,6 +11,7 @@ extern Role parameter;
 extern Tools tools;
 extern ShopItem items;
 extern int map[14][14][10];
+
 
 View::View(QWidget *parent) : QGraphicsView(parent) {         // Initialize the status to "welcome"
     status = "welcome";
@@ -96,61 +98,7 @@ void View::keyMain(QKeyEvent * event) {
             break;
     }
 }
-// void View::keyShop(QKeyEvent *event){};
-/*
-void View::keyShop(QKeyEvent *event) {
-    switch (event->key()) {
-        case Qt::Key_1:     // Hp + 30 , Money - 50
-            if (player.GetMoney() >= 50) {
-                player.SetMoney(player.GetMoney() - 50);
-                player.SetHp(player.GetHp()+30);
-            }
-            emit events("shop");
-            break;
-        case Qt::Key_2:     // Attack + 2, Money - 50
-            if (player.GetMoney() >= 50) {
-                player.SetMoney(player.GetMoney() - 50);
-                player.SetAttack(player.GetAttack()+2);
-            }
-            emit events("shop");
-            break;
-        case Qt::Key_3:     // Defend + 1, Money - 50
-            if (player.GetMoney() >= 50) {
-                player.SetMoney(player.GetMoney() - 50);
-                player.SetDefend(player.GetDefend()+1);
-            }
-            emit events("shop");
-            break;
-        case Qt::Key_4:     // YellowKey + 1, Money - 40
-            if (player.GetMoney() >= 40) {
-                player.SetMoney(player.GetMoney() - 40);
-                keys.SetYellow(keys.GetYellow()+1);
-            }
-            emit events("shop");
-            break;
-        case Qt::Key_5:     // BlueKey + 1, Money - 120
-            if (player.GetMoney() >= 120) {
-                player.SetMoney(player.GetMoney() - 120);
-                keys.SetBlue(keys.GetBlue()+1);
-            }
-            emit events("shop");
-            break;
-        case Qt::Key_6:     // RedKey + 1, Money - 300
-            if (player.GetMoney() > 300) {
-                player.SetMoney(player.GetMoney() - 300);
-                keys.SetRed(keys.GetRed()+1);
-            }
-            emit events("shop");
-            break;
-        case Qt::Key_Q:     // Back to main
-            SetStatus("main");
-            emit change();
-            break;
-        default:
-            break;
-    }
-}
-*/
+
 
 void View::keyWelcome(QKeyEvent *event) {
     switch (event->key()) {
@@ -210,8 +158,11 @@ void View::keyprof1(QKeyEvent *event){
             player.SetEQ(player.GetEQ()+2);
             player.SetCharm(player.GetCharm()+2);
             player.SetMoney(player.GetMoney()+20);
+            emit events("prof1");
         }
-        emit events("prof1");
+        else {
+            emit events("lackpf1");
+        }
         break;
     case Qt::Key_2:
         SetStatus("main");
@@ -265,6 +216,7 @@ void View::keyStudyTogether(QKeyEvent *event){
         break;
     }
 }
+
 
 void View::keylecture(QKeyEvent *event){
     switch(event->key()){
@@ -384,9 +336,8 @@ void View::keyeat(QKeyEvent *event){
             player.SetEat(player.GetEat()+1);
             SetStatus("main");
             emit change();
-        }
-        else {
-            emit events("lackMoney");
+        } else {
+            events ("lackMoney");
         }
         break;
     case Qt::Key_2:
@@ -424,12 +375,11 @@ void View::keyEatTogether(QKeyEvent *event){
     }
 }
 
-
 void View::keysleep(QKeyEvent *event){
     switch(event->key()){
     case Qt::Key_1:
         player.SetDay(player.GetDay()+1);
-        //setlover();
+        setlover();
         player.SetMoney(player.GetMoney()+100);
 
         if(player.GetEat()==0)
@@ -471,9 +421,19 @@ void View::keysleep(QKeyEvent *event){
     }
 }
 
+
 void View::setlover(){
+
+    if (player.GetDay()>1){
+        if (player.GetLover1()==1)
+        {
+            map[player.GetLover2()][player.GetLover3()][1]=917;
+        }else{
+            map[player.GetLover2()][player.GetLover3()][2]=918;
+        }
+    }
     int map_id;
-    map_id = (rand()%1) + 1;
+    map_id = (rand()%2) + 1;
     int pos[196][2];
     int count = 0;
 
@@ -483,8 +443,8 @@ void View::setlover(){
         {
             if (map[i][j][map_id] >= 900)
             {
-                pos[i][0]=i;
-                pos[i][1]=j;
+                pos[count][0]=i;
+                pos[count][1]=j;
                 count ++;
             }
             j++;
@@ -495,22 +455,37 @@ void View::setlover(){
     int rand_lover;
     rand_lover = (rand()%(count));
     int lover_sex = player.GetSex();
-    if (lover_sex == 1){ //boy
-        map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 103; //girl pic
+    if (lover_sex == 1){
+        if (map_id==1){
+            map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 128; //girl pic
+        }else{
+            map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 129; //girl pic
+        }
+
     }else{
-        map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 113; //boy pic
+        if (map_id==1){
+            map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 130; //boy pic
+        }else{
+            map[pos[rand_lover][0]][pos[rand_lover][1]][map_id] = 131; //boy pic
+        }
     }
+    player.SetLoverpose1(map_id);
+    player.SetLoverpose2(pos[rand_lover][0]);
+    player.SetLoverpose3(pos[rand_lover][1]);
+
 }
 
 void View::meetlover(QKeyEvent *event){
     switch(event->key()){
     case Qt::Key_1:
-        if(player.GetEnergy()>=5 && player.GetMoney()>=20 && GetStatus() == "love"){
-            player.SetEnergy(player.GetEnergy()-5);
-            player.SetEQ(player.GetEQ()+1);
+        if(player.GetEnergy()>=10 && player.GetIQ()>=130 && player.GetEQ()>=120){
+            player.SetEnergy(player.GetEnergy()-10);
+            player.SetIQ(player.GetIQ()+2);
+            player.SetEQ(player.GetEQ()+2);
             player.SetCharm(player.GetCharm()+10);
+            //fight();
         }
-        emit events("GF");
+        emit events("prof3");
         break;
     case Qt::Key_2:
         SetStatus("main");
@@ -563,7 +538,6 @@ void View::keyDating(QKeyEvent *event){
     }
 }
 
-
 void View::action() {
     switch (next_step) {
         case 640:
@@ -581,7 +555,7 @@ void View::action() {
             emit events("prof2");
         break;
 
-        case 1300:
+        case 6:
             SetStatus("prof3");
             emit events("prof3");
         break;
@@ -600,11 +574,11 @@ void View::action() {
             SetStatus("sleep");
             emit events("dormitory");
         break;
+
         case 124:
             SetStatus("gym");
             emit events("gym1");
         break;
-
         case 103:
             SetStatus("dating");
             emit events("activitiesWithLover");
@@ -614,6 +588,20 @@ void View::action() {
             emit events("activitiesWithLover");
         break;
 
+
+
+        case 11:
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+        case 17:
+        case 18:
+        case 19:
+        case 20:
+        case 21:
+        case 22:
         /*
         case 23:
 
@@ -662,6 +650,7 @@ void View::action() {
             player.SetPosy(13);
             break;
         case 669:
+        // Upstairs
             player.SetPlace(player.GetPlace()-2);
             player.SetPosx(8);
             player.SetPosy(13);

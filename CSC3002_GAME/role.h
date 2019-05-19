@@ -17,7 +17,6 @@ public:
     int GetDay() { return day;}
     int GetEat() { return eat;}
     int GetGrade() { return grade;}
-    bool GetSingle() { return single; }
 
     void SetEnergy(int energy)	{ this->energy = energy; }
     void GetMode(int mode) {this->mode = mode; }
@@ -31,7 +30,6 @@ public:
     void SetDay(int day) {this->day = day; }
     void SetEat(int eat){this->eat = eat;}
     void SetGrade(int grade){this->grade = grade;}
-    void SetSingle() {this->single = true; }
 
 private:
     int energy;
@@ -46,7 +44,6 @@ private:
     int day;
     int eat;
     int grade;
-    bool single;
 };
 
 #endif // Role_H

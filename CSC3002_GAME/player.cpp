@@ -11,7 +11,6 @@ void Player::ChooseSex(int sex) {
         SetLike(0);
         SetDay(0);
         SetEat(0);
-        SetSingle();
     } else {
         SetEnergy(45);
         SetIQ(100);
@@ -22,7 +21,6 @@ void Player::ChooseSex(int sex) {
         SetLike(0);
         SetDay(0);
         SetEat(0);
-        SetSingle();
     }
 
     this->grade = 0;
@@ -31,7 +29,8 @@ void Player::ChooseSex(int sex) {
     this->place = 0;
     this->toward = 3;
     this->sex = sex;
-    this->need = 5;  //what's need???
+    this->need = 5;
+    this->single = true;
 }
 
 void Player::GradeUp() {

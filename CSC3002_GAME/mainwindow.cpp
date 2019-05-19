@@ -36,6 +36,7 @@ extern Role parameter;
 extern int map[14][14][10];
 extern int mode;
 
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     // Initialize private varible
     cheats = new Cheat();
@@ -94,7 +95,7 @@ void MainWindow::CreateActions() {           // Create all actions in mainwindow
     cheatMoney = new QAction(tr("Money+50"), this);
     cheatGrade = new QAction(tr("Grade+1"), this);
     cheatLike = new QAction(tr("Like+100"), this);
-    cheatMode = new QAction(tr("GodMode"), this);
+    cheatDay = new QAction(tr("Day+1"),this);
 
     callGrilfriend = new QAction(QString("CallGrilfriend"),this);
     takeout = new QAction(QString("TakeOut"),this);
@@ -115,8 +116,8 @@ void MainWindow::CreateActions() {           // Create all actions in mainwindow
     connect(cheatEQ, SIGNAL(triggered()), cheats, SLOT(slotCheatIQ()));
     connect(cheatMoney, SIGNAL(triggered()), cheats, SLOT(slotCheatMoney()));
     connect(cheatGrade, SIGNAL(triggered()), cheats, SLOT(slotCheatGrade()));
-    connect(cheatLike, SIGNAL(triggered()), cheats, SLOT(slotCheatGrade()));
-    connect(cheatMode, SIGNAL(triggered()), cheats, SLOT(slotCheatMode()));
+    connect(cheatLike, SIGNAL(triggered()), cheats, SLOT(slotCheatLike()));
+    connect(cheatDay, SIGNAL(triggered()), cheats, SLOT(slotCheatDay()));
     
     connect(help,SIGNAL(triggered()),this,SLOT(slotHelp()));
 }
@@ -148,7 +149,7 @@ void MainWindow::CreateMenus() {             // Create all menus in mainwindow
     //cheatMenu->addSeparator();
     //cheatMenu->addSeparator();
     //cheatMenu->addSeparator();
-    cheatMenu->addAction(cheatMode);
+    cheatMenu->addAction(cheatDay);
 }
 
 void MainWindow::CreateInform() {           // Print player information
@@ -171,9 +172,6 @@ void MainWindow::CreateInform() {           // Print player information
     //AddTextItem(-40, 240, QString::number(keys.GetYellow(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
     //AddTextItem(-40, 265, QString::number(keys.GetBlue(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
     //AddTextItem(-40, 290, QString::number(keys.GetRed(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
-    if (mode == -1)
-        AddTextItem(-90, 30, "God Mode!!!", 12, kRed);
-
 }
 
 void MainWindow::slotDrawScene() {          // Draw the whole scene
@@ -217,6 +215,11 @@ void MainWindow::sloteat(){
     CreateInform();
 }
 
+void MainWindow::slotEatTogether() {
+    Clear();
+    AddPictureItem(0,0,"eatTogether");
+}
+
 void MainWindow::slotsleep(){
     Clear();
     AddPictureItem(0,0,"sleep");
@@ -227,6 +230,11 @@ void MainWindow::slotstudy(){
     Clear();
     AddPictureItem(0,0,"study");
     CreateInform();
+}
+
+void MainWindow::slotStudyTogether() {
+    Clear();
+    AddPictureItem(0,0,"studyTogether");
 }
 
 void MainWindow::slotlackpf2(){
@@ -253,6 +261,11 @@ void MainWindow::slotgym(){
     CreateInform();
 }
 
+void MainWindow::slotGymTogether() {
+    Clear();
+    AddPictureItem(0,0,"gymTogether");
+}
+
 void MainWindow::sloteat1(){
     Clear();
     AddPictureItem(0,0,"eat1");
@@ -275,6 +288,27 @@ void MainWindow::slotlackenergy(){
     Clear();
     AddPictureItem(0,0,"lackenergy");
     CreateInform();
+}
+
+void MainWindow::slotlackMoney(){
+    Clear();
+    AddPictureItem(0,0,"lackMoney");
+    CreateInform();
+}
+
+void MainWindow::slotDating() {
+    Clear();
+    AddPictureItem(0,0,"activitiesWithLover");
+}
+
+void MainWindow::slotMovie() {
+    Clear();
+    AddPictureItem(0,0,"movie");
+}
+
+void MainWindow::slotLackMovie() {
+    Clear();
+    AddPictureItem(0,0,"lackMovie");
 }
 
 void MainWindow::slothighIQ(){
@@ -316,12 +350,19 @@ void MainWindow::slotEvent(QString str) {           // Choose different event ac
     else if (str == "prof2") slotprof2();
     else if (str == "prof3") slotprof3();
     else if (str == "eat") sloteat();
+    else if (str == "eatTogether") slotEatTogether();
     else if (str == "sleep") slotsleep();
     else if (str == "study") slotstudy();
+    else if (str == "studyTogether") slotStudyTogether();
     else if (str == "lackpf2") slotlackpf2();
     else if (str == "lecture") slotlecture();
     else if (str == "gym") slotgym();
+    else if (str == "gymTogether") slotGymTogether();
     else if (str == "lackenergy") slotlackenergy();
+    else if (str == "lackMoney") slotlackMoney();
+    else if (str == "dating") slotDating();
+    else if (str == "movie") slotMovie();
+    else if (str == "lackMovie") slotLackMovie();
     else if (str == "eat1") sloteat1();
     else if (str == "dormitory") slotdormitory();
     else if (str == "gym1") slotgym1();
@@ -385,7 +426,7 @@ void MainWindow::slotLoadGame() {           // Load data
 }
 
 void MainWindow::slotMovePlayerItem(int x, int y) {             // Move player item
-    if (playerItem->zValue() == 0) {
+    if (playerItem->zValue() == 0.0) {
         playerItem->moveBy(x*kPixlen, y*kPixlen);
         player.SetPosx(player.GetPosx() + x);
         player.SetPosy(player.GetPosy() + y);
@@ -423,99 +464,4 @@ void MainWindow::AddTextItem(int x, int y, QString str, int size, QColor color) 
     scene->addItem(item);
     item->setPos(x-kOffsetX,y-kOffsetY);
 }
-
-/*
-void MainWindow::CreateFight(int num) {     // Draw the fight background and frames
-    if (player.GetFloor() == 5)
-        AddPictureItem(-102, 0, "firebg");
-    else if (player.GetFloor() == 6)
-        AddPictureItem(-102, 0, "icebg");
-    else if (player.GetFloor() == 9)
-        AddPictureItem(-102, 0, "highbg");
-    else
-        AddPictureItem(-102, 0, "lowbg");
-    AddPictureItem(40, 50, "fight1");
-    AddPictureItem(152, 67, "vs");
-    if (tools.GetSword())
-        AddPictureItem(53, 70, "sword");
-    if (tools.GetShield())
-        AddPictureItem(123, 70, "shield");
-    AddPictureItem(85, 65, "sex" + QString::number(player.GetSex(), kDecimal));
-    AddPictureItem(231, 65, QString::number(num, kDecimal));
-    AddPictureItem(40, 140, "fight2");
-    AddPictureItem(40, 256, "fight3");
-}
-
-void MainWindow::slotFight(int num) {       // Fight and draw the result
-    Clear();
-    CreateFight(num);
-
-    int random, damage, time = 0;
-    int playerHp, monsterHp;
-    int playerMiss = 0, monsterMiss = 0;
-    int playerCrit = 0, monsterCrit = 0;
-    QString str1, str2;
-    QTime t = QTime::currentTime();
-    qsrand(t.msec()+t.second()*1000);
-    num -= 11;
-
-    monsterHp = monsters[num].GetHp();
-    playerHp = player.GetHp();
-    str1 = QString::number(playerHp, kDecimal) + "   ->   ";
-    str2 = QString::number(monsterHp, kDecimal) + "   ->   ";
-
-    // While not win or lose do, take turns to attack
-    while (1) {
-        random = qrand() % 99 + 1;
-        damage = qMax(player.GetAttack() - monsters[num].GetDefend(), 1);
-        damage += qFloor(damage*0.5*(random >= player.GetCrit()));    // Check if Crit or not
-        monsterHp -= damage * (random > monsters[num].GetMiss());     // Check if Miss or not
-        if (random <= monsters[num].GetMiss())
-            playerMiss++;
-        if (random >= player.GetCrit())
-            monsterCrit++;
-        if (monsterHp <= 0) {
-            monsterHp = 0;
-            break;
-        }
-        random = qrand() % 99 + 1;
-        damage = qMax(monsters[num].GetAttack() - player.GetDefend(), 1);
-        damage += qFloor(damage*0.5*(random >= monsters[num].GetCrit()));    // Check if Crit or not
-        playerHp -= mode * damage * (random > player.GetMiss());             // Check if Miss or not, also check cheat mode
-        if (random <= player.GetMiss())
-            monsterMiss++;
-        if (random >= monsters[num].GetCrit())
-            playerCrit++;
-        if (playerHp <= 0) {
-            playerHp = 0;
-            break;
-        }
-        time++;
-    }
-
-    // Draw the fighting details
-    str1 += QString::number(playerHp, kDecimal);
-    str2 += QString::number(monsterHp, kDecimal);
-    AddTextItem(60, 155, str1, 12, "WHITE");
-    AddTextItem(205, 155, str2, 12, "WHITE");
-    AddTextItem(75, 171, "Crit : " + QString::number(playerCrit, kDecimal), 12, kRed);
-    AddTextItem(215, 171, "Crit : " + QString::number(monsterCrit, kDecimal), 12, kRed);
-    AddTextItem(75, 188, "Miss : " + QString::number(playerMiss, kDecimal), 12, kGreen);
-    AddTextItem(215, 188, "Miss : " + QString::number(monsterMiss, kDecimal), 12, kGreen);
-    AddTextItem(75, 265, "Money + " + QString::number(monsters[num].GetMoney(), kDecimal), 12, kYellow);
-    AddTextItem(210, 265, "Exp + " + QString::number(monsters[num].GetExp(), kDecimal), 12, kYellow);
-
-    // Get the money and experience
-    player.SetMoney(player.GetMoney() + monsters[num].GetMoney());
-    player.SetExp(player.GetExp() + monsters[num].GetExp());
-    player.SetHp(playerHp);
-
-    // Level up (not dead)
-    if (player.GetExp() >= player.GetNeed() && player.GetHp() > 0) {
-        player.SetExp(player.GetExp() - player.GetNeed());
-        player.LevelUp();
-        AddPictureItem(65, 355, "levelup");
-    }
-}
-*/
 
