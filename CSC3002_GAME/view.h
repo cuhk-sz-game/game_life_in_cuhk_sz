@@ -2,14 +2,51 @@
 #define VIEW_H
 
 #include <QGraphicsView>
+/* * Class: View * -------------------------------
+* This class include all method which used to key events
+* when character interact with map iterms or npc those method
+* will be called to control the behavior of character according
+* to player's choice*/
 
 class View : public QGraphicsView {
     Q_OBJECT
 signals:
+/* * Method: move
+* Usage: move(int,int);
+* -----------------------------------
+* sent signal when player press direction key */
+
     void move(int x, int y);
+
+/* * Method: events
+* Usage: events(QString str);
+* -----------------------------------
+* send signal when interation happened connect
+* with solt method in mainwindow*/
+
     void events(QString str);
-    void date(int num);  //fight -> date
+
+/* * Method: date
+* Usage: date(int);
+* -----------------------------------
+* update date when player chopse to sleep */
+
+    void date(int num);
+
+/* * Method: change
+* Usage: change();
+* -----------------------------------
+* send signal when information change or change
+* screen to mian scene*/
+
     void change();
+
+/* * Method: quit
+* Usage: quit();
+* -----------------------------------
+* send signal when reach to one of ending
+* of the game and exit program*/
+
     void quit();
 
 public:

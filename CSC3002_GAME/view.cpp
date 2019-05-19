@@ -347,8 +347,8 @@ void View::keyeat(QKeyEvent *event){
         emit change();
         break;
     case Qt::Key_3:
-        SetStatus("sleep");
-        emit events("sleep");
+        SetStatus("eat");
+        emit events("eat");
         break;
     default:
         break;
