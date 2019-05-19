@@ -11,7 +11,7 @@
 #include <QtMath>
 #include <QApplication>
 #include <QDebug>
-//test2
+//test
 
 // Constants
 const int kPixlen = 32;             // The pixels of each block
@@ -96,7 +96,7 @@ void MainWindow::CreateActions() {           // Create all actions in mainwindow
     cheatLike = new QAction(tr("Like+100"), this);
     cheatMode = new QAction(tr("GodMode"), this);
 
-    callGirlfriendOrBoyfriend = new QAction(QString("CallGirlfriendOrBoyfriend"),this);
+    callGrilfriend = new QAction(QString("CallGrilfriend"),this);
     takeout = new QAction(QString("TakeOut"),this);
     help = new QAction(QString("Help"),this);
     // newGame->setShortcut(tr("N"));
@@ -133,7 +133,7 @@ void MainWindow::CreateMenus() {             // Create all menus in mainwindow
 
     // phone menu
     QMenu *Phone = menuBar()->addMenu(QString("Phone"));
-    Phone->addAction(callGirlfriendOrBoyfriend);
+    Phone->addAction(callGrilfriend);
     Phone->addAction(takeout);
     Phone->addAction(help);
     
@@ -152,6 +152,7 @@ void MainWindow::CreateMenus() {             // Create all menus in mainwindow
 }
 
 void MainWindow::CreateInform() {           // Print player information
+    const char *location[]={"STREET","LIBRARY","CLASS","CANTEE","GYM"};
     AddPictureItem(-102, 0, "sidebg");
     AddPictureItem(-97, 30, "side");
     AddPictureItem(-93, 5, "info1");
@@ -159,14 +160,14 @@ void MainWindow::CreateInform() {           // Print player information
     AddPictureItem(-82, 130, "info2");
     AddPictureItem(-83, 145, "info3");
     AddPictureItem(-83, 230, "info4");
-    AddTextItem(-60, 5, "STREET" /*+QString::number(player.GetPlace()+1, kDecimal)*/, 8, QColor(0,0,0));
-    AddTextItem(-62, 100, "DAY "+QString::number(player.GetGrade() +1, kDecimal), 8, QColor(0,0,0));
-    AddTextItem(-43, 127, QString::number(player.GetEnerge(), kDecimal), 8, QColor(0,0,0));
-    AddTextItem(-43, 154, QString::number(player.GetIQ(), kDecimal), 8, QColor(0,0,0));
-    AddTextItem(-43, 178, QString::number(player.GetEQ(), kDecimal), 8, QColor(0,0,0));
-    AddTextItem(-40, 228, QString::number(player.GetCharm(), kDecimal), 8, QColor(0,0,0));
-    AddTextItem(-40, 254, QString::number(player.GetMoney(), kDecimal), 8, QColor(0,0,0));
-    AddTextItem(-40, 281, QString::number(player.GetLike(), kDecimal), 8, QColor(0,0,0));
+    AddTextItem(-60, 5, location[player.GetPlace()]/*+QString::number(player.GetPlace()+1, kDecimal)*/, 12, QColor(0,0,0));
+    AddTextItem(-62, 100, "DAY "+QString::number(player.GetDay()+1, kDecimal), 10, QColor(0,0,0));
+    AddTextItem(-43, 127, QString::number(player.GetEnergy(), kDecimal), 12, QColor(0,0,0));
+    AddTextItem(-43, 154, QString::number(player.GetIQ(), kDecimal), 12, QColor(0,0,0));
+    AddTextItem(-43, 178, QString::number(player.GetEQ(), kDecimal), 12, QColor(0,0,0));
+    AddTextItem(-40, 228, QString::number(player.GetCharm(), kDecimal), 12, QColor(0,0,0));
+    AddTextItem(-40, 254, QString::number(player.GetMoney(), kDecimal), 12, QColor(0,0,0));
+    AddTextItem(-40, 281, QString::number(player.GetLike(), kDecimal), 12, QColor(0,0,0));
     //AddTextItem(-40, 240, QString::number(keys.GetYellow(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
     //AddTextItem(-40, 265, QString::number(keys.GetBlue(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
     //AddTextItem(-40, 290, QString::number(keys.GetRed(), kDecimal), 8, QColor(qrand()%256,qrand()%256,qrand()%256));
@@ -192,6 +193,114 @@ void MainWindow::slotShop() {               // Draw the shop scene
     CreateInform();
 }
 
+void MainWindow::slotprof1(){
+    Clear();
+    AddPictureItem(0,0,"prof1");
+    CreateInform();
+}
+
+void MainWindow::slotprof2(){
+    Clear();
+    AddPictureItem(0,0,"prof2");
+    CreateInform();
+}
+
+void MainWindow::slotprof3(){
+    Clear();
+    AddPictureItem(0,0,"prof1");
+    CreateInform();
+}
+
+void MainWindow::sloteat(){
+    Clear();
+    AddPictureItem(0,0,"eat");
+    CreateInform();
+}
+
+void MainWindow::slotsleep(){
+    Clear();
+    AddPictureItem(0,0,"sleep");
+    CreateInform();
+}
+
+void MainWindow::slotstudy(){
+    Clear();
+    AddPictureItem(0,0,"study");
+    CreateInform();
+}
+
+void MainWindow::slotlackpf2(){
+    Clear();
+    AddPictureItem(0,0,"lackpf2");
+    CreateInform();
+}
+
+void MainWindow::slotlackpf3(){
+    Clear();
+    AddPictureItem(0,0,"lackpf3");
+    CreateInform();
+}
+
+void MainWindow::slotlecture(){
+    Clear();
+    AddPictureItem(0,0,"lecture");
+    CreateInform();
+}
+
+void MainWindow::slotgym(){
+    Clear();
+    AddPictureItem(0,0,"gym");
+    CreateInform();
+}
+
+void MainWindow::sloteat1(){
+    Clear();
+    AddPictureItem(0,0,"eat1");
+    CreateInform();
+}
+
+void MainWindow::slotdormitory(){
+    Clear();
+    AddPictureItem(0,0,"Untitled-1");
+    CreateInform();
+}
+
+void MainWindow::slotgym1(){
+    Clear();
+    AddPictureItem(0,0,"work_out");
+    CreateInform();
+}
+
+void MainWindow::slotlackenergy(){
+    Clear();
+    AddPictureItem(0,0,"lackenergy");
+    CreateInform();
+}
+
+void MainWindow::slothighIQ(){
+    Clear();
+    AddPictureItem(0,0,"highIQ");
+    CreateInform();
+}
+
+void MainWindow::slothighEQ(){
+    Clear();
+    AddPictureItem(0,0,"highEQ");
+    CreateInform();
+}
+
+void MainWindow::slotlowIQ(){
+    Clear();
+    AddPictureItem(0,0,"lowIQ");
+    CreateInform();
+}
+
+void MainWindow::slotnormal(){
+    Clear();
+    AddPictureItem(0,0,"normal");
+    CreateInform();
+}
+
 void MainWindow::slotEvent(QString str) {           // Choose different event according to str
     if (str == "new") slotNewGame();
     else if (str == "boy") player.ChooseSex(1);
@@ -203,6 +312,22 @@ void MainWindow::slotEvent(QString str) {           // Choose different event ac
     */
     else if (str == "shop") slotShop();
     else if (str == "quit") close();
+    else if (str == "prof1") slotprof1();
+    else if (str == "prof2") slotprof2();
+    else if (str == "prof3") slotprof3();
+    else if (str == "eat") sloteat();
+    else if (str == "sleep") slotsleep();
+    else if (str == "study") slotstudy();
+    else if (str == "lackpf2") slotlackpf2();
+    else if (str == "lecture") slotlecture();
+    else if (str == "gym") slotgym();
+    else if (str == "lackenergy") slotlackenergy();
+    else if (str == "eat1") sloteat1();
+    else if (str == "dormitory") slotdormitory();
+    else if (str == "gym1") slotgym1();
+    else if (str == "highIQ") slothighIQ();
+    else if (str == "highEQ") slothighEQ();
+    else if (str == "lowIQ") slotlowIQ();
     else {
         Clear();
         AddPictureItem(-102, 0, "background");
@@ -264,7 +389,11 @@ void MainWindow::slotMovePlayerItem(int x, int y) {             // Move player i
         playerItem->moveBy(x*kPixlen, y*kPixlen);
         player.SetPosx(player.GetPosx() + x);
         player.SetPosy(player.GetPosy() + y);
-        map[player.GetPosx()][player.GetPosy()][player.GetPlace()] = 0;
+        if (player.GetPlace() == 0){
+            map[player.GetPosx()][player.GetPosy()][player.GetPlace()] = 1;
+        }
+        else if (player.GetPlace() == 1) map[player.GetPosx()][player.GetPosy()][player.GetPlace()] = 0;
+        else if (player.GetPlace() == 2) map[player.GetPosx()][player.GetPosy()][player.GetPlace()] = 918;
     }
 }
 

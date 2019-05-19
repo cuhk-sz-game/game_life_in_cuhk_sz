@@ -164,7 +164,7 @@ void DataBase::SavePlayer() {         // Save player data
     QSqlQuery query(db);
     QString str = "UPDATE player SET hp=?, attack=?, defend=?,money=?, exp=?, miss=?, crit=?, level=?, posx=?, posy=?, floor=?, toward=?, sex=?, need=? WHERE id=1";
     query.prepare(str);
-    query.bindValue(0, player.GetEnerge());
+    query.bindValue(0, player.GetEnergy());
     query.bindValue(1, player.GetIQ());
     query.bindValue(2, player.GetEQ());
     query.bindValue(3, player.GetMoney());

@@ -11,6 +11,7 @@ void Player::ChooseSex(int sex) {
         SetLike(0);
         SetDay(0);
         SetEat(0);
+        SetSingle();
     } else {
         SetEnergy(45);
         SetIQ(100);
@@ -21,6 +22,7 @@ void Player::ChooseSex(int sex) {
         SetLike(0);
         SetDay(0);
         SetEat(0);
+        SetSingle();
     }
 
     this->grade = 0;

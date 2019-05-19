@@ -43,7 +43,26 @@ public slots:
     //void slotBook();
     //void slotDate(int num);
     void slotEvent(QString str);
-
+    void slotHelp();
+    void slotprof1();
+    //void slotlackpf1();
+    void slotprof2();
+    void slotlackpf2();
+    void slotprof3();
+    void slotlackpf3();
+    void sloteat();
+    void slotsleep();
+    void slotstudy();
+    void slotlecture();
+    void slotgym();
+    void slotlackenergy();
+    void sloteat1();
+    void slotdormitory();
+    void slotgym1();
+    void slothighIQ();
+    void slothighEQ();
+    void slotlowIQ();
+    void slotnormal();
 private:
     View *view;
     QGraphicsScene *scene;
@@ -68,7 +87,7 @@ private:
     QAction *cheatLike;
     QAction *cheatGodMode;
     Cheat *cheats;
-    QAction *callGirlfriendOrBoyfriend;
+    QAction *callGrilfriend;
     QAction *takeout;
     QAction *help;
 

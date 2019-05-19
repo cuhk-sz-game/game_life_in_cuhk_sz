@@ -12,7 +12,7 @@ extern ShopItem items;
 extern int mode;
 
 void Cheat::slotCheatEnergy() {             // Cheat: Hp+100
-    player.SetEnergy(player.GetEnerge() + 100);
+    player.SetEnergy(player.GetEnergy() + 100);
     emit change();
 }
 
@@ -32,7 +32,7 @@ void Cheat::slotCheatCharm() {
 }
 
 void Cheat::slotCheatMoney() {          // Cheat: Money+50
-    player.SetMoney(player.GetMoney() + 50);
+    player.SetMoney(player.GetMoney() + 100);
     emit change();
 }
 

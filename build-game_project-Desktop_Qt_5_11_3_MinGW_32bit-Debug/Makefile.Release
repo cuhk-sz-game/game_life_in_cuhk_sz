@@ -111,48 +111,260 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_application.cpp
 release/qrc_application.cpp: ../CSC3002_GAME/application.qrc \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/bin/rcc.exe \
-		../CSC3002_GAME/assets/102.png \
-		../CSC3002_GAME/assets/sex0.png \
-		../CSC3002_GAME/assets/levelup.png \
-		../CSC3002_GAME/assets/icebg.png \
-		../CSC3002_GAME/assets/book.png \
-		../CSC3002_GAME/assets/lowbg.png \
-		../CSC3002_GAME/assets/101.png \
-		../CSC3002_GAME/assets/side.png \
-		../CSC3002_GAME/assets/tip2.png \
-		../CSC3002_GAME/assets/vs.png \
-		../CSC3002_GAME/assets/welcome.png \
-		../CSC3002_GAME/assets/critical.png \
-		../CSC3002_GAME/assets/firebg.png \
-		../CSC3002_GAME/assets/miss.png \
-		../CSC3002_GAME/assets/tip1.png \
-		../CSC3002_GAME/assets/shop.png \
+		../CSC3002_GAME/assets/574.png \
+		../CSC3002_GAME/assets/610.png \
+		../CSC3002_GAME/assets/905.png \
+		../CSC3002_GAME/assets/583.png \
+		../CSC3002_GAME/assets/914.png \
+		../CSC3002_GAME/assets/592.png \
 		../CSC3002_GAME/assets/sidebg.png \
-		../CSC3002_GAME/assets/info4.png \
-		../CSC3002_GAME/assets/fight3.png \
-		../CSC3002_GAME/assets/info3.png \
-		../CSC3002_GAME/assets/114.png \
-		../CSC3002_GAME/assets/help.png \
-		../CSC3002_GAME/assets/background.png \
-		../CSC3002_GAME/assets/highbg.png \
-		../CSC3002_GAME/assets/fight2.png \
-		../CSC3002_GAME/assets/info2.png \
-		../CSC3002_GAME/assets/113.png \
-		../CSC3002_GAME/assets/fail.png \
-		../CSC3002_GAME/assets/sword.png \
-		../CSC3002_GAME/assets/fight1.png \
+		../CSC3002_GAME/assets/518.png \
 		../CSC3002_GAME/assets/info1.png \
-		../CSC3002_GAME/assets/112.png \
-		../CSC3002_GAME/assets/tile.png \
-		../CSC3002_GAME/assets/104.png \
+		../CSC3002_GAME/assets/527.png \
+		../CSC3002_GAME/assets/lowIQ.png \
+		../CSC3002_GAME/assets/536.png \
+		../CSC3002_GAME/assets/545.png \
+		../CSC3002_GAME/assets/554.png \
+		../CSC3002_GAME/assets/563.png \
+		../CSC3002_GAME/assets/572.png \
+		../CSC3002_GAME/assets/903.png \
+		../CSC3002_GAME/assets/581.png \
+		../CSC3002_GAME/assets/912.png \
+		../CSC3002_GAME/assets/590.png \
+		../CSC3002_GAME/assets/516.png \
+		../CSC3002_GAME/assets/525.png \
+		../CSC3002_GAME/assets/GF.png \
+		../CSC3002_GAME/assets/659.png \
+		../CSC3002_GAME/assets/534.png \
+		../CSC3002_GAME/assets/543.png \
+		../CSC3002_GAME/assets/668.png \
+		../CSC3002_GAME/assets/552.png \
+		../CSC3002_GAME/assets/0.png \
+		../CSC3002_GAME/assets/561.png \
+		../CSC3002_GAME/assets/570.png \
+		../CSC3002_GAME/assets/901.png \
+		../CSC3002_GAME/assets/lackpf2.png \
+		../CSC3002_GAME/assets/noGF.png \
+		../CSC3002_GAME/assets/prof2.png \
+		../CSC3002_GAME/assets/999.png \
+		../CSC3002_GAME/assets/910.png \
+		../CSC3002_GAME/assets/help.png \
+		../CSC3002_GAME/assets/eat.png \
+		../CSC3002_GAME/assets/514.png \
+		../CSC3002_GAME/assets/639.png \
+		../CSC3002_GAME/assets/eat1.png \
+		../CSC3002_GAME/assets/648.png \
+		../CSC3002_GAME/assets/523.png \
+		../CSC3002_GAME/assets/532.png \
+		../CSC3002_GAME/assets/657.png \
+		../CSC3002_GAME/assets/127.png \
+		../CSC3002_GAME/assets/lowbg.png \
+		../CSC3002_GAME/assets/666.png \
+		../CSC3002_GAME/assets/541.png \
+		../CSC3002_GAME/assets/550.png \
+		../CSC3002_GAME/assets/lackenergy.png \
+		../CSC3002_GAME/assets/619.png \
+		../CSC3002_GAME/assets/628.png \
 		../CSC3002_GAME/assets/ending1.png \
-		../CSC3002_GAME/assets/111.png \
-		../CSC3002_GAME/assets/select.png \
-		../CSC3002_GAME/assets/103.png \
+		../CSC3002_GAME/assets/637.png \
+		../CSC3002_GAME/assets/512.png \
+		../CSC3002_GAME/assets/sleep.png \
+		../CSC3002_GAME/assets/521.png \
+		../CSC3002_GAME/assets/646.png \
+		../CSC3002_GAME/assets/655.png \
+		../CSC3002_GAME/assets/125.png \
+		../CSC3002_GAME/assets/530.png \
+		../CSC3002_GAME/assets/firebg.png \
+		../CSC3002_GAME/assets/664.png \
+		../CSC3002_GAME/assets/608.png \
+		../CSC3002_GAME/assets/617.png \
+		../CSC3002_GAME/assets/626.png \
+		../CSC3002_GAME/assets/510.png \
+		../CSC3002_GAME/assets/635.png \
+		../CSC3002_GAME/assets/599.png \
+		../CSC3002_GAME/assets/levelup.png \
 		../CSC3002_GAME/assets/sex1.png \
+		../CSC3002_GAME/assets/644.png \
+		../CSC3002_GAME/assets/114.png \
+		../CSC3002_GAME/assets/653.png \
+		../CSC3002_GAME/assets/123.png \
+		../CSC3002_GAME/assets/662.png \
+		../CSC3002_GAME/assets/fight2.png \
+		../CSC3002_GAME/assets/671.png \
+		../CSC3002_GAME/assets/606.png \
+		../CSC3002_GAME/assets/579.png \
+		../CSC3002_GAME/assets/615.png \
+		../CSC3002_GAME/assets/588.png \
+		../CSC3002_GAME/assets/624.png \
+		../CSC3002_GAME/assets/633.png \
+		../CSC3002_GAME/assets/597.png \
+		../CSC3002_GAME/assets/103.png \
+		../CSC3002_GAME/assets/642.png \
+		../CSC3002_GAME/assets/112.png \
+		../CSC3002_GAME/assets/651.png \
+		../CSC3002_GAME/assets/121.png \
+		../CSC3002_GAME/assets/book.png \
+		../CSC3002_GAME/assets/660.png \
+		../CSC3002_GAME/assets/559.png \
+		../CSC3002_GAME/assets/568.png \
+		../CSC3002_GAME/assets/604.png \
+		../CSC3002_GAME/assets/577.png \
+		../CSC3002_GAME/assets/613.png \
+		../CSC3002_GAME/assets/highIQ.png \
+		../CSC3002_GAME/assets/908.png \
+		../CSC3002_GAME/assets/586.png \
+		../CSC3002_GAME/assets/622.png \
+		../CSC3002_GAME/assets/critical.png \
+		../CSC3002_GAME/assets/917.png \
+		../CSC3002_GAME/assets/631.png \
+		../CSC3002_GAME/assets/595.png \
+		../CSC3002_GAME/assets/101.png \
+		../CSC3002_GAME/assets/info4.png \
+		../CSC3002_GAME/assets/vs.png \
+		../CSC3002_GAME/assets/640.png \
+		../CSC3002_GAME/assets/background.png \
+		../CSC3002_GAME/assets/539.png \
+		../CSC3002_GAME/assets/548.png \
+		../CSC3002_GAME/assets/557.png \
+		../CSC3002_GAME/assets/566.png \
+		../CSC3002_GAME/assets/602.png \
+		../CSC3002_GAME/assets/normal.png \
+		../CSC3002_GAME/assets/575.png \
+		../CSC3002_GAME/assets/611.png \
+		../CSC3002_GAME/assets/906.png \
+		../CSC3002_GAME/assets/584.png \
+		../CSC3002_GAME/assets/620.png \
+		../CSC3002_GAME/assets/915.png \
+		../CSC3002_GAME/assets/593.png \
+		../CSC3002_GAME/assets/icebg.png \
+		../CSC3002_GAME/assets/519.png \
+		../CSC3002_GAME/assets/info2.png \
+		../CSC3002_GAME/assets/528.png \
+		../CSC3002_GAME/assets/537.png \
+		../CSC3002_GAME/assets/highEQ.png \
+		../CSC3002_GAME/assets/546.png \
+		../CSC3002_GAME/assets/555.png \
+		../CSC3002_GAME/assets/tip1.png \
+		../CSC3002_GAME/assets/564.png \
+		../CSC3002_GAME/assets/600.png \
+		../CSC3002_GAME/assets/Untitled-1.png \
+		../CSC3002_GAME/assets/573.png \
+		../CSC3002_GAME/assets/904.png \
+		../CSC3002_GAME/assets/highbg.png \
+		../CSC3002_GAME/assets/582.png \
+		../CSC3002_GAME/assets/913.png \
+		../CSC3002_GAME/assets/591.png \
+		../CSC3002_GAME/assets/517.png \
+		../CSC3002_GAME/assets/526.png \
+		../CSC3002_GAME/assets/535.png \
+		../CSC3002_GAME/assets/669.png \
+		../CSC3002_GAME/assets/544.png \
+		../CSC3002_GAME/assets/miss.png \
+		../CSC3002_GAME/assets/shop.png \
+		../CSC3002_GAME/assets/553.png \
+		../CSC3002_GAME/assets/1.png \
+		../CSC3002_GAME/assets/562.png \
+		../CSC3002_GAME/assets/571.png \
+		../CSC3002_GAME/assets/902.png \
+		../CSC3002_GAME/assets/lackpf3.png \
+		../CSC3002_GAME/assets/580.png \
+		../CSC3002_GAME/assets/prof3.png \
+		../CSC3002_GAME/assets/911.png \
+		../CSC3002_GAME/assets/welcome.png \
+		../CSC3002_GAME/assets/515.png \
+		../CSC3002_GAME/assets/649.png \
+		../CSC3002_GAME/assets/524.png \
+		../CSC3002_GAME/assets/533.png \
+		../CSC3002_GAME/assets/658.png \
+		../CSC3002_GAME/assets/542.png \
+		../CSC3002_GAME/assets/667.png \
+		../CSC3002_GAME/assets/551.png \
+		../CSC3002_GAME/assets/fail.png \
+		../CSC3002_GAME/assets/560.png \
+		../CSC3002_GAME/assets/prof1.png \
+		../CSC3002_GAME/assets/629.png \
+		../CSC3002_GAME/assets/998.png \
 		../CSC3002_GAME/assets/frame.png \
-		../CSC3002_GAME/assets/shield.png \
+		../CSC3002_GAME/assets/638.png \
+		../CSC3002_GAME/assets/513.png \
+		../CSC3002_GAME/assets/522.png \
+		../CSC3002_GAME/assets/647.png \
+		../CSC3002_GAME/assets/126.png \
+		../CSC3002_GAME/assets/531.png \
+		../CSC3002_GAME/assets/656.png \
+		../CSC3002_GAME/assets/gym.png \
+		../CSC3002_GAME/assets/665.png \
+		../CSC3002_GAME/assets/540.png \
+		../CSC3002_GAME/assets/609.png \
+		../CSC3002_GAME/assets/618.png \
+		../CSC3002_GAME/assets/627.png \
 		../CSC3002_GAME/assets/ending0.png \
+		../CSC3002_GAME/assets/study.png \
+		../CSC3002_GAME/assets/511.png \
+		../CSC3002_GAME/assets/636.png \
+		../CSC3002_GAME/assets/645.png \
+		../CSC3002_GAME/assets/520.png \
+		../CSC3002_GAME/assets/654.png \
+		../CSC3002_GAME/assets/124.png \
+		../CSC3002_GAME/assets/663.png \
+		../CSC3002_GAME/assets/fight3.png \
+		../CSC3002_GAME/assets/607.png \
+		../CSC3002_GAME/assets/lecture.png \
+		../CSC3002_GAME/assets/616.png \
+		../CSC3002_GAME/assets/sword.png \
+		../CSC3002_GAME/assets/589.png \
+		../CSC3002_GAME/assets/625.png \
+		../CSC3002_GAME/assets/634.png \
+		../CSC3002_GAME/assets/598.png \
+		../CSC3002_GAME/assets/104.png \
+		../CSC3002_GAME/assets/sex0.png \
+		../CSC3002_GAME/assets/643.png \
+		../CSC3002_GAME/assets/113.png \
+		../CSC3002_GAME/assets/652.png \
+		../CSC3002_GAME/assets/122.png \
+		../CSC3002_GAME/assets/661.png \
+		../CSC3002_GAME/assets/fight1.png \
+		../CSC3002_GAME/assets/670.png \
+		../CSC3002_GAME/assets/569.png \
+		../CSC3002_GAME/assets/605.png \
+		../CSC3002_GAME/assets/578.png \
+		../CSC3002_GAME/assets/614.png \
+		../CSC3002_GAME/assets/909.png \
+		../CSC3002_GAME/assets/587.png \
+		../CSC3002_GAME/assets/623.png \
+		../CSC3002_GAME/assets/918.png \
+		../CSC3002_GAME/assets/632.png \
+		../CSC3002_GAME/assets/596.png \
+		../CSC3002_GAME/assets/102.png \
+		../CSC3002_GAME/assets/select.png \
+		../CSC3002_GAME/assets/111.png \
+		../CSC3002_GAME/assets/650.png \
+		../CSC3002_GAME/assets/120.png \
+		../CSC3002_GAME/assets/tile.png \
+		../CSC3002_GAME/assets/549.png \
+		../CSC3002_GAME/assets/558.png \
+		../CSC3002_GAME/assets/567.png \
+		../CSC3002_GAME/assets/603.png \
+		../CSC3002_GAME/assets/576.png \
+		../CSC3002_GAME/assets/612.png \
+		../CSC3002_GAME/assets/side.png \
+		../CSC3002_GAME/assets/907.png \
+		../CSC3002_GAME/assets/585.png \
+		../CSC3002_GAME/assets/621.png \
+		../CSC3002_GAME/assets/916.png \
+		../CSC3002_GAME/assets/100.png \
+		../CSC3002_GAME/assets/630.png \
+		../CSC3002_GAME/assets/594.png \
+		../CSC3002_GAME/assets/shield.png \
+		../CSC3002_GAME/assets/info3.png \
+		../CSC3002_GAME/assets/529.png \
+		../CSC3002_GAME/assets/538.png \
+		../CSC3002_GAME/assets/547.png \
+		../CSC3002_GAME/assets/work_out.png \
+		../CSC3002_GAME/assets/556.png \
+		../CSC3002_GAME/assets/tip2.png \
+		../CSC3002_GAME/assets/565.png \
+		../CSC3002_GAME/assets/601.png \
 		../CSC3002_GAME/assets/welcome.wav \
 		../CSC3002_GAME/database/data.sql
 	C:\Qt\Qt5.11.3\5.11.3\mingw53_32\bin\rcc.exe -name application ..\CSC3002_GAME\application.qrc -o release\qrc_application.cpp
@@ -301,7 +513,7 @@ release/moc_mainwindow.cpp: ../CSC3002_GAME/view.h \
 		../CSC3002_GAME/mainwindow.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/bin/moc.exe
-	C:\Qt\Qt5.11.3\5.11.3\mingw53_32\bin\moc.exe $(DEFINES) --include C:/Users/Thinkpad/Desktop/C++Project/game_life_in_cuhk_sz/build-game_project-Desktop_Qt_5_11_3_MinGW_32bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/mkspecs/win32-g++ -IC:/Users/Thinkpad/Desktop/C++Project/game_life_in_cuhk_sz/CSC3002_GAME -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtANGLE -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtSql -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtNetwork -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore -I. -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\CSC3002_GAME\mainwindow.h -o release\moc_mainwindow.cpp
+	C:\Qt\Qt5.11.3\5.11.3\mingw53_32\bin\moc.exe $(DEFINES) --include C:/Users/Thinkpad/Desktop/game_life_in_cuhk_sz-master/build-game_project-Desktop_Qt_5_11_3_MinGW_32bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/mkspecs/win32-g++ -IC:/Users/Thinkpad/Desktop/game_life_in_cuhk_sz-master/CSC3002_GAME -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtANGLE -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtSql -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtNetwork -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore -I. -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\CSC3002_GAME\mainwindow.h -o release\moc_mainwindow.cpp
 
 release/moc_cheat.cpp: C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/QObject \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qobject.h \
@@ -356,7 +568,7 @@ release/moc_cheat.cpp: C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/QObject \
 		../CSC3002_GAME/cheat.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/bin/moc.exe
-	C:\Qt\Qt5.11.3\5.11.3\mingw53_32\bin\moc.exe $(DEFINES) --include C:/Users/Thinkpad/Desktop/C++Project/game_life_in_cuhk_sz/build-game_project-Desktop_Qt_5_11_3_MinGW_32bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/mkspecs/win32-g++ -IC:/Users/Thinkpad/Desktop/C++Project/game_life_in_cuhk_sz/CSC3002_GAME -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtANGLE -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtSql -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtNetwork -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore -I. -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\CSC3002_GAME\cheat.h -o release\moc_cheat.cpp
+	C:\Qt\Qt5.11.3\5.11.3\mingw53_32\bin\moc.exe $(DEFINES) --include C:/Users/Thinkpad/Desktop/game_life_in_cuhk_sz-master/build-game_project-Desktop_Qt_5_11_3_MinGW_32bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/mkspecs/win32-g++ -IC:/Users/Thinkpad/Desktop/game_life_in_cuhk_sz-master/CSC3002_GAME -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtANGLE -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtSql -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtNetwork -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore -I. -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\CSC3002_GAME\cheat.h -o release\moc_cheat.cpp
 
 release/moc_view.cpp: C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QGraphicsView \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/qgraphicsview.h \
@@ -472,7 +684,7 @@ release/moc_view.cpp: C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets/QGraphi
 		../CSC3002_GAME/view.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/bin/moc.exe
-	C:\Qt\Qt5.11.3\5.11.3\mingw53_32\bin\moc.exe $(DEFINES) --include C:/Users/Thinkpad/Desktop/C++Project/game_life_in_cuhk_sz/build-game_project-Desktop_Qt_5_11_3_MinGW_32bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/mkspecs/win32-g++ -IC:/Users/Thinkpad/Desktop/C++Project/game_life_in_cuhk_sz/CSC3002_GAME -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtANGLE -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtSql -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtNetwork -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore -I. -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\CSC3002_GAME\view.h -o release\moc_view.cpp
+	C:\Qt\Qt5.11.3\5.11.3\mingw53_32\bin\moc.exe $(DEFINES) --include C:/Users/Thinkpad/Desktop/game_life_in_cuhk_sz-master/build-game_project-Desktop_Qt_5_11_3_MinGW_32bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/mkspecs/win32-g++ -IC:/Users/Thinkpad/Desktop/game_life_in_cuhk_sz-master/CSC3002_GAME -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtANGLE -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtSql -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtNetwork -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore -I. -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\CSC3002_GAME\view.h -o release\moc_view.cpp
 
 release/moc_phone.cpp: C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/QObject \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/qobject.h \
@@ -527,7 +739,7 @@ release/moc_phone.cpp: C:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore/QObject \
 		../CSC3002_GAME/phone.h \
 		release/moc_predefs.h \
 		C:/Qt/Qt5.11.3/5.11.3/mingw53_32/bin/moc.exe
-	C:\Qt\Qt5.11.3\5.11.3\mingw53_32\bin\moc.exe $(DEFINES) --include C:/Users/Thinkpad/Desktop/C++Project/game_life_in_cuhk_sz/build-game_project-Desktop_Qt_5_11_3_MinGW_32bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/mkspecs/win32-g++ -IC:/Users/Thinkpad/Desktop/C++Project/game_life_in_cuhk_sz/CSC3002_GAME -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtANGLE -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtSql -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtNetwork -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore -I. -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\CSC3002_GAME\phone.h -o release\moc_phone.cpp
+	C:\Qt\Qt5.11.3\5.11.3\mingw53_32\bin\moc.exe $(DEFINES) --include C:/Users/Thinkpad/Desktop/game_life_in_cuhk_sz-master/build-game_project-Desktop_Qt_5_11_3_MinGW_32bit-Debug/release/moc_predefs.h -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/mkspecs/win32-g++ -IC:/Users/Thinkpad/Desktop/game_life_in_cuhk_sz-master/CSC3002_GAME -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtMultimedia -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtWidgets -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtGui -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtANGLE -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtSql -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtNetwork -IC:/Qt/Qt5.11.3/5.11.3/mingw53_32/include/QtCore -I. -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.11.3/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\CSC3002_GAME\phone.h -o release\moc_phone.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
