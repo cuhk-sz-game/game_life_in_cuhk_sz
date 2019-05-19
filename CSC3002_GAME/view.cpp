@@ -53,6 +53,8 @@ void View::keyPressEvent(QKeyEvent * event) {         // This function will auto
         keyeat(event);
     else if (status == "sleep")
         keysleep(event);
+    else if (status == "gym")
+        keygym(event);
 }
 
 void View::keyMain(QKeyEvent * event) {
@@ -282,6 +284,31 @@ void View::keyprof2(QKeyEvent *event){
     }
 }
 
+void View::keygym(QKeyEvent *event){
+    switch(event->key()){
+    case Qt::Key_1:
+        if(player.GetEnerge()>=10){
+            player.SetEnergy(player.GetEnerge()-10);
+            player.SetCharm(player.GetCharm()+4);
+            SetStatus("main");
+            emit change();
+        }else{
+            emit events("lackenergy");
+        }
+        break;
+    case Qt::Key_2:
+        SetStatus("main");
+        emit change();
+        break;
+    case Qt::Key_3:
+        SetStatus("gym");
+        emit events("gym");
+        break;
+    default:
+        break;
+    }
+}
+
 void View::keyprof3(QKeyEvent *event){
     switch(event->key()){
     case Qt::Key_1:
@@ -311,12 +338,17 @@ void View::keyeat(QKeyEvent *event){
             player.SetEnergy(player.GetEnerge()+15);
             player.SetMoney(player.GetMoney()-20);
             player.SetEat(player.GetEat()+1);
+            SetStatus("main");
+            emit change();
         }
-        emit events("eat");
         break;
     case Qt::Key_2:
         SetStatus("main");
         emit change();
+        break;
+    case Qt::Key_3:
+        SetStatus("eat");
+        emit events("eat");
         break;
     default:
         break;
@@ -327,7 +359,7 @@ void View::keysleep(QKeyEvent *event){
     switch(event->key()){
     case Qt::Key_1:
         player.SetDay(player.GetDay()+1);
-        setlover();
+        //setlover();
         player.SetMoney(player.GetMoney()+100);
 
         if(player.GetEat()==0)
@@ -343,10 +375,26 @@ void View::keysleep(QKeyEvent *event){
         }
         SetStatus("main");
         emit change();
+        if(player.GetDay()==20){
+            if(player.GetIQ()>500){
+                emit events("highIQ");
+            }else if(player.GetEQ()>160){
+                emit events("highEQ");
+            }else if(player.GetIQ()<300){
+                emit events("lowIQ");
+            }else if(player.GetIQ()>300){
+                emit events("normal");
+            }
+            SetStatus("ending");
+        }
         break;
     case Qt::Key_2:
         SetStatus("main");
         emit change();
+        break;
+    case Qt::Key_3:
+        SetStatus("sleep");
+        emit events("sleep");
         break;
     default:
         break;
@@ -365,8 +413,8 @@ void View::setlover(){
         {
             if (map[i][j][map_id] >= 900)
             {
-                pos[count][0]=i;
-                pos[count][1]=j;
+                pos[i][0]=i;
+                pos[i][1]=j;
                 count ++;
             }
             j++;
@@ -430,7 +478,7 @@ void View::action() {
 
         case 122:
             SetStatus("eat");
-            emit events("eat");
+            emit events("eat1");
         break;
 
         case 626:
@@ -440,11 +488,14 @@ void View::action() {
 
         case 121:
             SetStatus("sleep");
-            emit events("sleep");
+            emit events("dormitory");
         break;
-
         case 10:
             SetStatus("movie");
+        break;
+        case 124:
+            SetStatus("gym");
+            emit events("gym1");
         break;
 
 
@@ -464,6 +515,7 @@ void View::action() {
         case 22:
         /*
         case 23:
+
             SetStatus("");
             emit fight(next_step);
             break;
@@ -537,3 +589,4 @@ int View::access(int x, int y) {          // Check if map(x,y) is access or not
     } else
         return 0;
 }
+

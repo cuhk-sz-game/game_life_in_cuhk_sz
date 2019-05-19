@@ -34,7 +34,7 @@ public:
     void keymovie(QKeyEvent *event);
     void setlover();
     void meetlover(QKeyEvent *event);
-
+    void keygym(QKeyEvent *event);
     // random events
     void keyexam(QKeyEvent *event);
     void keybook(QKeyEvent *event);
