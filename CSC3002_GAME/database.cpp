@@ -8,6 +8,7 @@
 #include <QFile>
 #include <QDebug>
 
+//    https://blog.csdn.net/Zzhouzhou237/article/details/79459320
 extern Player player;
 extern Character character[4];
 extern Tools tools;
@@ -18,43 +19,14 @@ const int kMapLen = 14;
 const int kMaxFloor = 10;
 //const int kDecimal=10;
 
-/*
- * Constructor: DataBase()
- * ----------------------------
- * Initizlizes a empty SQLITE database.
- */
 DataBase::DataBase() {         // Create to SQLITE database
     db = QSqlDatabase::addDatabase("QSQLITE");
 }
 
-/*
- * Destructor: ~PriorityQueue()
- * ----------------------------
- * Close the datebase.
- */
 DataBase::~DataBase() {         // Close database
     db.close();
 }
 
-/* Method:Connect(Qstring dbpath)
- * Usage: db.Connect(Qstring database_path_in_the_system)
- *         where db is declared using "DataBase db";
- * -------------------------------------------------------
- * Connect to SQLITE database.
- *
- * If the database file haven't been open before, initial the database using following method:
- *      1, create QMessageBox.
- *      2, set the Icon, Text and StandardButtons for database.
- *
- * Read the sql file.
- *
- * Create Sql query db. Read the text in sql file by step, which script by ";".
- * Using the foreach loop to implement the sql command line.
- *      The control transfer from main() function to QT using exec().
- *      During the exec(), QT will accept and process the user's order,
- *      pass the result to the corresponding window application.
- *      Allowing us to use sql command directly.
- */
 void DataBase::Connect(QString dbpath) {         // Connect to SQLITE database
     db.setDatabaseName(dbpath);
     if (!db.open()) {
@@ -91,14 +63,6 @@ void DataBase::Connect(QString dbpath) {         // Connect to SQLITE database
     qDebug( "Database connected." );
 }
 
-/*
- * Method: LoadMap(int num)
- * Usage: db.LoadMap(0); // Load new game.
- *        db.LoadMap(1); // Load saved game.
- * -----------------------------------------
- * Using the "SELECT layer0, layer1, ..." to read the map, and tranform the data type first in strings, than integer.
- * The map data is store in arrry form "map[x][y][layer]".
- */
 void DataBase::LoadMap(int num) {         // Load map data, num = 0 for new, others for old
     QSqlQuery query(db);
     QString str = "SELECT layer0, layer1, layer2, layer3, layer4, layer5, layer6, layer7, layer8, layer9 FROM map WHERE id = " + QString::number(num+1, 10);
@@ -178,14 +142,6 @@ void DataBase::LoadIteam(int num) {         // Load keys data, num = 0 for new, 
     query.clear();
 }
 
-/*
- * Method: SaveMap(int num)
- * Usage: db.SaveMap(1);
- * ------------------------
- * Map in sql file have two level. Level one is constant for creating new game, level two store the current
- * db query whenever user call save command.
- * Using sql command "UPDATE map SET layer0=..." to update the map.
- */
 void DataBase::SaveMap(int num) {         // Save map data
     QSqlQuery query(db);
     QString str = "UPDATE map SET layer0=?, layer1=?, layer2=?, layer3=?, layer4=?, layer5=?, layer6=?, layer7=?, layer8=?, layer9=? WHERE id=" + QString::number(num+1, 10);
